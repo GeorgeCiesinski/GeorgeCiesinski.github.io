@@ -4,6 +4,62 @@ $secondary: #398AB9;
 $dark: #cae0ed;
 $light: #EEEEEE;
 
+// Navbar
+.navbar-brand {
+  font-size: 30px !important;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.navbar-brand img {
+  max-height: 50px;
+}
+
+/* Navbar Site Title */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+  color: white;
+}
+
+.navbar-custom .navbar-brand:hover {
+  color: var(--navbar_logo_text_highlight);
+}
+
+/* Navbar Links */
+.navbar-dark .navbar-toggler-icon {
+  color: var(--navbar_logo_text);
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: var(--navbar_text);
+}
+
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-item:hover .nav-link {
+  color: var(--navbar_text_highlight);
+}
+
+/* Navbar Dropdown Menu */
+.navbar-nav > li > .dropdown-menu {
+  background-color: var(--navbar_dropdown);
+}
+
+.navbar-nav > li > .dropdown-menu a{
+  color: var(--navbar_dropdown_text);
+  margin: auto 0px !important;
+}
+
+.navbar-nav > li > .dropdown-menu a:hover {
+  background-color: var(--navbar_dropdown_hover);
+  margin: auto 0px !important;
+}
+
+nav ul li a {
+  color: white;
+  font-size: 22px;
+  margin: auto 10px;
+}
+
 // fadeout
 
 .fadeout {
