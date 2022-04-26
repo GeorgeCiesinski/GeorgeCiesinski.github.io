@@ -45,6 +45,19 @@ $light: #EEEEEE;
   margin: auto 0px;
 }
 
+// Form
+input[type=text], input[type=email], textarea.form-control {
+  border: 2px solid $primary;
+  background-color: $light;
+  border-radius: 4px;
+}
+
+input[type=submit], span.form-custom  {
+  border: 2px solid $primary;
+  background-color: $dark;
+  border-radius: 4px;
+}
+
 // Footer
 .footer-custom .heading-thick {
   text-transform: uppercase;

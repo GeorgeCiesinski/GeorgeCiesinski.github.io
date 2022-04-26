@@ -29,6 +29,16 @@
   background-color: #cae0ed;
   margin: auto 0px; }
 
+input[type=text], input[type=email], textarea.form-control {
+  border: 2px solid #1C658C;
+  background-color: #EEEEEE;
+  border-radius: 4px; }
+
+input[type=submit], span.form-custom {
+  border: 2px solid #1C658C;
+  background-color: #cae0ed;
+  border-radius: 4px; }
+
 .footer-custom .heading-thick {
   text-transform: uppercase;
   font-weight: 900; }
