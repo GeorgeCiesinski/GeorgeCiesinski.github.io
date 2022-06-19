@@ -5,26 +5,37 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Portfolio Item - Portfolio</title>
 		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<script defer src="js/fontawesome-all.min.js"></script>
 	</head>
 	<body>
 		<!-- NAVBAR -->
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<nav class="py-4 navbar navbar-custom navbar-expand-lg bg-primary">
 			<div class="container">
+				<!-- Navbar Brand -->
 				<a class="navbar-brand" href="index.html">
-					<img class="rounded-circle align-middle me-2" src="img/50x50.png" alt="Profile Picture">
+					<img class="w-25 align-middle me-2" src="img/logo.svg" alt="Portfolio Logo">
 					Portfolio
 				</a>
+				<!-- Navbar Toggler -->
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbar">
+					<!-- Navbar Items -->
 					<ul class="navbar-nav ms-auto">
-						<li class="nav-item">
+						<li class="nav-item active" aria-current="page">
 							<a class="nav-link" href="index.html">Home</a>
 						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								Resume
+							</a>
+							<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+								<li><a class="dropdown-item" href="https://georgeciesinski.me/resume/assets/GeorgeCiesinskiResume.pdf">PDF</a></li>
+								<li><a class="dropdown-item" href="https://georgeciesinski.me/resume">Website</a></li>
+							</ul>
+						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="portfolio-overview.html">Portfolio</a>
+							<a class="nav-link" href="index.html">Blog</a>
 						</li>
 					</ul>
 				</div>
@@ -128,6 +139,7 @@
 			</div>
 		</footer>
 
+		<script src="js/fontawesome-all.min.js"></script>
 		<script src="js/bootstrap.bundle.min.js"></script>
 	</body>
 </html>
