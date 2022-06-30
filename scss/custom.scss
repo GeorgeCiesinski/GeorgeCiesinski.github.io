@@ -45,6 +45,17 @@ $light: #EEEEEE;
   margin: auto 0px;
 }
 
+// Carousel
+$carousel-control-color: $secondary;
+$carousel-caption-color: $secondary;
+$carousel-indicator-active-bg: $secondary;
+
+.carousel-caption {
+  position: relative;
+  left: auto;
+  right: auto;
+}
+
 // Form
 input[type=text], input[type=email], textarea.form-control {
   border: 2px solid $primary;
