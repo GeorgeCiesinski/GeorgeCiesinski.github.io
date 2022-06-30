@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Portfolio Item - Text-Script</title>
+		<title>Portfolio Item - Image Filters</title>
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 	</head>
 	<body>
@@ -45,8 +45,8 @@
 		<!-- Body Container -->
 		<div class="container my-4 py-5">
 			<h2 class="display-4 mb-4">
-			<span class="badge bg-primary">App</span> Text-Script
-			<small class="d-block text-muted">Built using Pynput and Pyperclip</small>
+			<span class="badge bg-primary">App</span> Image Filters
+			<small class="d-block text-muted">Built using OpenCV and TKinter</small>
 			</h2>
 			<div class="row mb-4">
 				<div class="col-12 col-xl-8 mb-4 mb-xl-0">
@@ -54,24 +54,34 @@
 						<div class="carousel-indicators">
 						<button type="button" data-bs-target="#carousel" data-bs-slide-to="0" aria-label="Slide 1" class="active"></button>
 						<button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+						<button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
 						</div>
 						<div class="carousel-inner">
 						<div class="carousel-item active">
-							<img src="img/text-script/email.gif" alt="First slide" class="d-block w-100">
+							<img src="img/930x700.png" alt="First slide" class="d-block w-100">
 							<div class="carousel-caption">
-								<h3>Shortcut Example</h3>
-								<p>
-									Typing in a shortcut will automatically paste the textblock into the text input
-								</p>
+							<h3>Caption</h3>
+							<p>
+								This text describes the first slide.
+							</p>
 							</div>
 						</div>
 						<div class="carousel-item">
-							<img src="img/text-script/ConsoleWindow.png" alt="Second slide" class="d-block w-100">
+							<img src="img/930x700.png" alt="Second slide" class="d-block w-100">
 							<div class="carousel-caption">
-								<h3>Console</h3>
-								<p>
-									The app currently runs in a console but can be minimized and kept in the background
-								</p>
+							<h3>Caption</h3>
+							<p>
+								This text describes the second slide.
+							</p>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<img src="img/930x700.png" alt="Third slide" class="d-block w-100">
+							<div class="carousel-caption">
+							<h3>Caption</h3>
+							<p>
+								This text describes the third slide.
+							</p>
 							</div>
 						</div>
 						</div>
@@ -89,40 +99,36 @@
 					<div>
 						<h3>Project Description</h3>
 						<p>
-							An application that allows the user to type in a text shortcut and then paste text block templates (textblocks) directly in text input fields of browsers, messaging, and other applications.
-
-							This application was built at my current job to help agents quickly generate email responses to customers by utilizing personal and shared textblocks. It is used by the team lead and various agents throughout the company. 
-							
-							The application is currently in beta and is open to the public.
+							A simple image filter application that uses OpenCV and TKinter to create new images.
 						</p>
 					</div>
 					<div>
 						<h3>Project Details</h3>
 						<ul>
 							<li>
-								Monitors keyboard input for shortcuts using the Pynput library
+								Native GUI built with TKinter
 							</li>
 							<li>
-								Passes the textblock templates to the clipboard using the Pyperclip library and pastes it into the text input field
+								Brightness, Color and Greyscale
 							</li>
 							<li>
-								Configurable to use local or remote textblocks stored in various cloud services like Google Drive, or OneDrive
+								Several basic filters
 							</li>
 							<li>
-								Tracks usage statistics including shortcuts used, characters pasted, and time saved
+								Built in logging
 							</li>
 						</ul>
 					</div>
 					<div class="pb-4">
 						<h3>Technology</h3>
 						<span class="badge bg-secondary">Python</span>
-						<span class="badge bg-secondary">Pynput</span>
-						<span class="badge bg-secondary">Pyperclip</span>
+						<span class="badge bg-secondary">OpenCV</span>
+						<span class="badge bg-secondary">TKinter</span>
 					</div>
 					<div>
 						<h3>Project Link</h3>
 						<i class="fab fa-github"></i>
-						<a href="#0" target="_blank">https://github.com/GeorgeCiesinski/text-script</a>
+						<a href="#0" target="_blank">https://github.com/GeorgeCiesinski/image-filters</a>
 					</div>
 				</div>
 			</div>
