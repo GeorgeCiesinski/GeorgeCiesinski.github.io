@@ -76,11 +76,15 @@ $carousel-indicator-active-bg: $secondary;
 /* If browser supports backdrop-filter, use superior background blur */
 @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
   .backdrop-blur {
-    background-color: hsla(202, 55%, 51%, 0.3);
+    background-color: hsla(202, 55%, 51%, 0.5);
     -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
   }
 }
+
+/* carousel-caption settings */
+$carousel-caption-width: 100%;  /* full width caption element */
+$carousel-caption-spacer: 0px; /* no bottom spacer */
 
 // Form
 input[type=text], input[type=email], textarea.form-control {
