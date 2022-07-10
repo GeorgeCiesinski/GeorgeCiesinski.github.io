@@ -56,7 +56,6 @@ $carousel-indicator-active-bg: $secondary;
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
   .backdrop-blur {
     background-color: rgba(61, 148, 199, 0.5);
-    -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px); } }
 /* carousel-caption settings */
 /* full width caption element */

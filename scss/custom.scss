@@ -77,7 +77,6 @@ $carousel-indicator-active-bg: $secondary;
 @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
   .backdrop-blur {
     background-color: hsla(202, 55%, 51%, 0.5);
-    -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
   }
 }
