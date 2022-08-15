@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Portfolio Item - Flask API</title>
+		<title>Portfolio Item - Landing Page</title>
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 	</head>
 	<body class="d-flex flex-column min-vh-100">
@@ -45,92 +45,32 @@
 		<!-- Body Container -->
 		<div class="container my-4 py-5">
 			<h2 class="display-4 mb-4">
-			<span class="badge bg-primary">Back-end</span> API
-			<small class="d-block text-muted">Built using Flask</small>
+			<span class="badge bg-primary">Front-end</span> Landing Page
+			<small class="d-block text-muted">Built with HTML and SCSS</small>
 			</h2>
 			<div class="row mb-4">
 				<div class="col-12 col-xl-8 mb-4 mb-xl-0">
 					<div id="carousel" class="carousel slide" data-ride="carousel">
 						<div class="carousel-indicators">
-						<button type="button" data-bs-target="#carousel" data-bs-slide-to="0" aria-label="Slide 1" class="active"></button>
-						<button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-						<button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-						<button type="button" data-bs-target="#carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-						<button type="button" data-bs-target="#carousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-						<button type="button" data-bs-target="#carousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
-						<button type="button" data-bs-target="#carousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
-						<button type="button" data-bs-target="#carousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
+							<button type="button" data-bs-target="#carousel" data-bs-slide-to="0" aria-label="Slide 1" class="active"></button>
+							<button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
 						</div>
 						<div class="carousel-inner rounded border border-2 border-secondary">
 							<div class="carousel-item active">
-								<img src="img/flask-api/user-auth-bad.png" alt="First slide" class="d-block w-100">
+								<img src="img/landing-page/space.png" alt="First slide" class="d-block">
 								<div class="carousel-caption backdrop-blur">
-									<h3>Post Auth Fail</h3>
+									<h3>Rocket Thrust and Parallax Star Animation</h3>
 									<p>
-										Auth fails if bad user credentials are posted.
+										Animated effects using only CSS
 									</p>
 								</div>
 							</div>
 							<div class="carousel-item">
-								<img src="img/flask-api/user-register.png" alt="Second slide" class="d-block">
+								<img src="img/landing-page/pet-nar.png" alt="Second slide" class="d-block">
 								<div class="carousel-caption backdrop-blur">
-									<h3>POST User Registration</h3>
+									<h3>Video with Custom Controls</h3>
 									<p>
-										Register new users using post.
-									</p>
-								</div>
-							</div>
-							<div class="carousel-item">
-								<img src="img/flask-api/user-auth-good.png" alt="Third slide" class="d-block">
-								<div class="carousel-caption backdrop-blur">
-									<h3>POST Auth Success</h3>
-									<p>
-										Auth succeeds if good user credentials are posted.
-									</p>
-								</div>
-							</div>
-							<div class="carousel-item">
-								<img src="img/flask-api/store-post.png" alt="Fourth slide" class="d-block">
-								<div class="carousel-caption backdrop-blur">
-									<h3>POST Store</h3>
-									<p>
-										New stores can easily be posted.
-									</p>
-								</div>
-							</div>
-							<div class="carousel-item">
-								<img src="img/flask-api/item-post.png" alt="Fifth slide" class="d-block">
-								<div class="carousel-caption backdrop-blur">
-									<h3>POST item</h3>
-									<p>
-										New items can be posted to existing stores.
-									</p>
-								</div>
-							</div>
-							<div class="carousel-item">
-								<img src="img/flask-api/stores-get.png" alt="Sixth slide" class="d-block">
-								<div class="carousel-caption backdrop-blur">
-									<h3>GET stores</h3>
-									<p>
-										All existing stores and items can be retrieved with get.
-									</p>
-								</div>
-							</div>
-							<div class="carousel-item">
-								<img src="img/flask-api/item-delete.png" alt="Seventh slide" class="d-block">
-								<div class="carousel-caption backdrop-blur">
-									<h3>DELETE item</h3>
-									<p>
-										Items can be deleted from database.
-									</p>
-								</div>
-							</div>
-							<div class="carousel-item">
-								<img src="img/flask-api/flask-logs.png" alt="Eighth slide" class="d-block">
-								<div class="carousel-caption backdrop-blur">
-									<h3>Flask Console Output</h3>
-									<p>
-										Snapshot of console output as requests are made.
+										Pet Nar-nar by using custom play button using HTML5 video
 									</p>
 								</div>
 							</div>
@@ -149,35 +89,40 @@
 					<div>
 						<h3>Project Description</h3>
 						<p>
-							A functional API used for storing/retrieving stores and items. 
+							Landing Page built as an assignment for The Odin Project. 
 						</p>
 					</div>
 					<div>
 						<h3>Project Details</h3>
 						<ul>
 							<li>
-								Post new user
+								Responsive design using Flex
 							</li>
 							<li>
-								Post and Delete stores
+								Animated section using only CSS
 							</li>
 							<li>
-								Post and Delete items from stores
+								HTML5 video with custom play/pause control
 							</li>
 						</ul>
 					</div>
 					<div class="pb-4">
 						<h3>Technology</h3>
-						<span class="badge bg-secondary">Python</span>
-						<span class="badge bg-secondary">Flask</span>
-						<span class="badge bg-secondary">Flask-RESTful</span>
-						<span class="badge bg-secondary">SQLite</span>
-						<span class="badge bg-secondary">Heroku</span>
+						<span class="badge bg-secondary">HTML</span>
+						<span class="badge bg-secondary">CSS</span>
+						<span class="badge bg-secondary">SASS</span>
+						<span class="badge bg-secondary">JavaScript</span>
 					</div>
 					<div>
 						<h3>Project Link</h3>
-						<i class="fab fa-github"></i>
-						<a href="https://github.com/GeorgeCiesinski/FlaskRESTful-for-Heroku" target="_self">https://github.com/GeorgeCiesinski/FlaskRESTful-for-Heroku</a>
+						<div>
+							<i class="fab fa-github"></i>
+							<a href="https://github.com/GeorgeCiesinski/landing-page" target="_self">https://github.com/GeorgeCiesinski/landing-page</a>
+						</div>
+						<div>
+							<i class="fas fa-link"></i>
+							<a href="https://georgeciesinski.me/landing-page" target="_self">https://georgeciesinski.me/landing-page</a>
+						</div>
 					</div>
 				</div>
 			</div>
