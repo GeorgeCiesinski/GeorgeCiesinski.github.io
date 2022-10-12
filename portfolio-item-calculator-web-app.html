@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Portfolio Item - Poke-guesser-bot</title>
+		<title>Portfolio Item - Calculator Web App</title>
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 	</head>
 	<body class="d-flex flex-column min-vh-100">
@@ -45,52 +45,32 @@
 		<!-- Body Container -->
 		<div class="container my-4 py-5">
 			<h2 class="display-4 mb-4">
-			<span class="badge bg-primary">Back-end</span> Poke-guesser-bot
-			<small class="d-block text-muted">Built using JavaScript, discord.js, and PokeApi v2</small>
+			<span class="badge bg-primary">Front-end</span> Calculator Web App
+			<small class="d-block text-muted">Built with HTML, SCSS and Javascript</small>
 			</h2>
 			<div class="row mb-4">
 				<div class="col-12 col-xl-8 mb-4 mb-xl-0">
 					<div id="carousel" class="carousel slide" data-ride="carousel">
 						<div class="carousel-indicators">
 							<button type="button" data-bs-target="#carousel" data-bs-slide-to="0" aria-label="Slide 1" class="active"></button>
-							<button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-							<button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-							<button type="button" data-bs-target="#carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+							<button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2" class="active"></button>
 						</div>
 						<div class="carousel-inner rounded border border-2 border-secondary">
 							<div class="carousel-item active">
-								<img src="img/poke-bot/explore.png" alt="First slide" class="d-block">
+								<img src="img/calculator-web-app/calculator-display.png" alt="First slide" class="d-block">
 								<div class="carousel-caption backdrop-blur">
-									<h3>!explore</h3>
+									<h3>Calculator Design</h3>
 									<p>
-										The !explore admin command generates a new pockemon for users to catch
+										This app has the same functions as the apple watch calculator and was designed with a blue color theme
 									</p>
 								</div>
 							</div>
 							<div class="carousel-item">
-								<img src="img/poke-bot/catch.png" alt="Second slide" class="d-block">
+								<img src="img/calculator-web-app/calculator-action.gif" alt="Second slide" class="d-block">
 								<div class="carousel-caption backdrop-blur">
-									<h3>$catch</h3>
+									<h3>Multiple Concurrent Operations</h3>
 									<p>
-										The $catch player command allows players to guess a pokemon name.
-									</p>
-								</div>
-							</div>
-							<div class="carousel-item">
-								<img src="img/poke-bot/leaderboard.png" alt="Third slide" class="d-block">
-								<div class="carousel-caption backdrop-blur">
-									<h3>$leaderboard</h3>
-									<p>
-										The $leaderboard command shows the top 20 players.
-									</p>
-								</div>
-							</div>
-							<div class="carousel-item">
-								<img src="img/poke-bot/reveal.png" alt="Fourth slide" class="d-block">
-								<div class="carousel-caption backdrop-blur">
-									<h3>!reveal</h3>
-									<p>
-										The !reveal admin command reveals the pokemon if players are unable to guess it. The pokemon name is shown in multiple languages.
+										The calculator can evaluate an expression with all available operators. Console output included to show the BEDMAS steps
 									</p>
 								</div>
 							</div>
@@ -109,41 +89,40 @@
 					<div>
 						<h3>Project Description</h3>
 						<p>
-							A discord bot that allows users to play a game of "Poke-guesser". The game is played by guessing the name of a pokemon based on a picture of the pokemon. The bot announces if the guess is correct. The bot also keeps track of the users' scores and display the top 20 player scores.
+							In browser calculator tool
 						</p>
 					</div>
 					<div>
 						<h3>Project Details</h3>
 						<ul>
 							<li>
-								External API calls to retrieve pokemon data
+								Calculator loops through custom math functions in BEDMAS order instead of using built-in eval() function
 							</li>
 							<li>
-								Multi-language support using poke api
+								Scrolling display when numerical input/output exceeds display size
 							</li>
 							<li>
-								Persistant Championship with data stored in PostgreSQL
-							</li>
-							<li>
-								Dozens of admin and user commands
-							</li>
-							<li>
-								Hosted on Docker
+								Responsive design shrinks on smaller devices while keeping calculator in scale
 							</li>
 						</ul>
 					</div>
 					<div class="pb-4">
 						<h3>Technology</h3>
+						<span class="badge bg-secondary">HTML</span>
+						<span class="badge bg-secondary">CSS</span>
+						<span class="badge bg-secondary">SASS</span>
 						<span class="badge bg-secondary">JavaScript</span>
-						<span class="badge bg-secondary">discord.js</span>
-						<span class="badge bg-secondary">pokeapi.co</span>
-						<span class="badge bg-secondary">PostgreSQL</span>
-						<span class="badge bg-secondary">Docker</span>
 					</div>
 					<div>
 						<h3>Project Link</h3>
-						<i class="fab fa-github"></i>
-						<a href="https://github.com/GeorgeCiesinski/poke-guesser-bot" target="_self">Github</a>
+						<div>
+							<i class="fab fa-github"></i>
+							<a href="https://github.com/GeorgeCiesinski/pixel-sketchpad" target="_self">Github</a>
+						</div>
+						<div>
+							<i class="fas fa-link"></i>
+							<a href="http://georgeciesinski.me/pixel-sketchpad/" target="_self">Live Demo</a>
+						</div>
 					</div>
 				</div>
 			</div>
