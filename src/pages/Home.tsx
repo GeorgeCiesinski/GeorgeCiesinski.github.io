@@ -1,10 +1,10 @@
-import { ContactForm } from '../components/ContactForm'
-import { ProjectCard } from '../components/ProjectCard'
-import { getProjectsBySection } from '../data/projects'
+import { ContactForm } from "../components/ContactForm";
+import { ProjectCard } from "../components/ProjectCard";
+import { getProjectsBySection } from "../data/projects";
 
 export function Home() {
-  const webProjects = getProjectsBySection('web')
-  const appProjects = getProjectsBySection('apps')
+  const webProjects = getProjectsBySection("web");
+  const appProjects = getProjectsBySection("apps");
 
   return (
     <div className="container">
@@ -38,7 +38,11 @@ export function Home() {
         </div>
       </section>
 
-      <section className="section" id="projects" aria-labelledby="projects-heading">
+      <section
+        className="section"
+        id="projects"
+        aria-labelledby="projects-heading"
+      >
         <h2 className="section__title" id="projects-heading">
           Web Development
         </h2>
@@ -48,7 +52,7 @@ export function Home() {
           ))}
         </div>
 
-        <h2 className="section__title" style={{ marginTop: '2.5rem' }}>
+        <h2 className="section__title" style={{ marginTop: "2.5rem" }}>
           Apps and Bots
         </h2>
         <div className="grid">
@@ -58,7 +62,11 @@ export function Home() {
         </div>
       </section>
 
-      <section className="section" id="contact" aria-labelledby="contact-heading">
+      <section
+        className="section"
+        id="contact"
+        aria-labelledby="contact-heading"
+      >
         <div className="contact">
           <h2 className="contact__title" id="contact-heading">
             Contact Me
@@ -67,5 +75,5 @@ export function Home() {
         </div>
       </section>
     </div>
-  )
+  );
 }

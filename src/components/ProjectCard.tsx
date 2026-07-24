@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom'
-import type { Project } from '../data/projects'
+import { Link } from "react-router-dom";
+import type { Project } from "../data/projects";
 
 interface ProjectCardProps {
-  project: Project
+  project: Project;
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
@@ -16,5 +16,5 @@ export function ProjectCard({ project }: ProjectCardProps) {
       />
       <h3 className="project-card__title">{project.title}</h3>
     </Link>
-  )
+  );
 }

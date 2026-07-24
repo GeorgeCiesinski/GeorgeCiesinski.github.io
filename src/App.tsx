@@ -1,8 +1,8 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
-import { Layout } from './components/Layout'
-import { Home } from './pages/Home'
-import { ProjectDetail } from './pages/ProjectDetail'
-import { Success } from './pages/Success'
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { Layout } from "./components/Layout";
+import { Home } from "./pages/Home";
+import { ProjectDetail } from "./pages/ProjectDetail";
+import { Success } from "./pages/Success";
 
 export default function App() {
   return (
@@ -16,5 +16,5 @@ export default function App() {
         </Route>
       </Routes>
     </BrowserRouter>
-  )
+  );
 }

@@ -1,13 +1,13 @@
-import { Link, Navigate, useParams } from 'react-router-dom'
-import { ProjectCarousel } from '../components/ProjectCarousel'
-import { getProjectBySlug } from '../data/projects'
+import { Link, Navigate, useParams } from "react-router-dom";
+import { ProjectCarousel } from "../components/ProjectCarousel";
+import { getProjectBySlug } from "../data/projects";
 
 export function ProjectDetail() {
-  const { slug } = useParams<{ slug: string }>()
-  const project = slug ? getProjectBySlug(slug) : undefined
+  const { slug } = useParams<{ slug: string }>();
+  const project = slug ? getProjectBySlug(slug) : undefined;
 
   if (!project) {
-    return <Navigate to="/" replace />
+    return <Navigate to="/" replace />;
   }
 
   return (
@@ -16,8 +16,14 @@ export function ProjectDetail() {
         ← Back to projects
       </Link>
 
-      <h1 className="about__title" style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)' }}>
-        <span className="badge badge--primary" style={{ marginRight: '0.65rem' }}>
+      <h1
+        className="about__title"
+        style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)" }}
+      >
+        <span
+          className="badge badge--primary"
+          style={{ marginRight: "0.65rem" }}
+        >
           {project.category}
         </span>
         {project.title}
@@ -62,5 +68,5 @@ export function ProjectDetail() {
         </div>
       </div>
     </div>
-  )
+  );
 }

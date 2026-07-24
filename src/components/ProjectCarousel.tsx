@@ -1,27 +1,31 @@
-import { useState } from 'react'
-import type { ProjectSlide } from '../data/projects'
+import { useState } from "react";
+import type { ProjectSlide } from "../data/projects";
 
 interface ProjectCarouselProps {
-  slides: ProjectSlide[]
-  title: string
+  slides: ProjectSlide[];
+  title: string;
 }
 
 export function ProjectCarousel({ slides, title }: ProjectCarouselProps) {
-  const [index, setIndex] = useState(0)
+  const [index, setIndex] = useState(0);
 
   if (slides.length === 0) {
-    return null
+    return null;
   }
 
-  const slide = slides[index]
-  const hasMultiple = slides.length > 1
+  const slide = slides[index];
+  const hasMultiple = slides.length > 1;
 
   const go = (next: number) => {
-    setIndex((next + slides.length) % slides.length)
-  }
+    setIndex((next + slides.length) % slides.length);
+  };
 
   return (
-    <div className="carousel" aria-roledescription="carousel" aria-label={title}>
+    <div
+      className="carousel"
+      aria-roledescription="carousel"
+      aria-label={title}
+    >
       <div className="carousel__frame">
         <img
           className="carousel__image"
@@ -58,7 +62,7 @@ export function ProjectCarousel({ slides, title }: ProjectCarouselProps) {
               <button
                 key={slides[i].src}
                 type="button"
-                className={`carousel__dot${i === index ? ' carousel__dot--active' : ''}`}
+                className={`carousel__dot${i === index ? " carousel__dot--active" : ""}`}
                 aria-label={`Go to slide ${i + 1}`}
                 aria-selected={i === index}
                 onClick={() => setIndex(i)}
@@ -68,5 +72,5 @@ export function ProjectCarousel({ slides, title }: ProjectCarouselProps) {
         </>
       ) : null}
     </div>
-  )
+  );
 }

@@ -1,10 +1,10 @@
-import { useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 
 export function Navbar() {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
-  const close = () => setOpen(false)
+  const close = () => setOpen(false);
 
   return (
     <header className="navbar">
@@ -27,12 +27,12 @@ export function Navbar() {
 
         <ul
           id="primary-nav"
-          className={`navbar__links${open ? ' navbar__links--open' : ''}`}
+          className={`navbar__links${open ? " navbar__links--open" : ""}`}
         >
           <li>
             <NavLink
               className={({ isActive }) =>
-                `navbar__link${isActive ? ' navbar__link--active' : ''}`
+                `navbar__link${isActive ? " navbar__link--active" : ""}`
               }
               to="/"
               end
@@ -54,5 +54,5 @@ export function Navbar() {
         </ul>
       </div>
     </header>
-  )
+  );
 }

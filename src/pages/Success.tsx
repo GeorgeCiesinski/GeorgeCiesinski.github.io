@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 export function Success() {
   return (
@@ -9,5 +9,5 @@ export function Success() {
         Back to home
       </Link>
     </div>
-  )
+  );
 }

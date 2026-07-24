@@ -88,7 +88,9 @@
   color: $color-dark;
   font-size: 1.05rem;
   border-radius: $radius;
-  transition: color $transition, background $transition;
+  transition:
+    color $transition,
+    background $transition;
 
   &:hover,
   &--active {
@@ -198,7 +200,9 @@
   border: 2px solid $color-primary;
   font-weight: 600;
   cursor: pointer;
-  transition: background $transition, color $transition;
+  transition:
+    background $transition,
+    color $transition;
 
   &--primary {
     background: $color-dark;

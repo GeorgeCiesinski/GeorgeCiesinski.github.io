@@ -5,9 +5,18 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "oxlint",
-    "preview": "vite preview"
+    "vercel": "vercel dev",
+    "typecheck": "tsc -b --noEmit",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "check": "npm run format && npm run lint && npm run typecheck",
+    "validate": "npm run check && npm test"
   },
   "dependencies": {
     "react": "^19.2.7",
@@ -16,12 +25,20 @@
     "sass": "^1.101.7"
   },
   "devDependencies": {
-    "@types/node": "^24.13.2",
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^25.9.3",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.3",
-    "oxlint": "^1.71.0",
+    "eslint": "^10.6.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.3",
+    "globals": "^17.7.0",
+    "prettier": "^3.9.3",
     "typescript": "~6.0.2",
-    "vite": "^8.1.1"
+    "typescript-eslint": "^8.62.1",
+    "vite": "^8.1.1",
+    "vitest": "^4.1.9"
   }
 }

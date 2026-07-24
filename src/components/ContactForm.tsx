@@ -1,50 +1,49 @@
-import { useState, type FormEvent } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useState, type FormEvent } from "react";
+import { useNavigate } from "react-router-dom";
 
-const STATICFORMS_URL = 'https://api.staticforms.xyz/submit'
+const STATICFORMS_URL = "https://api.staticforms.xyz/submit";
 
 export function ContactForm() {
-  const navigate = useNavigate()
-  const [submitting, setSubmitting] = useState(false)
-  const [error, setError] = useState<string | null>(null)
+  const navigate = useNavigate();
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const accessKey = import.meta.env.VITE_STATICFORMS_ACCESS_KEY as
-    | string
-    | undefined
+    string | undefined;
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault()
-    setError(null)
+    event.preventDefault();
+    setError(null);
 
     if (!accessKey) {
       setError(
-        'Contact form is not configured. Set VITE_STATICFORMS_ACCESS_KEY.',
-      )
-      return
+        "Contact form is not configured. Set VITE_STATICFORMS_ACCESS_KEY.",
+      );
+      return;
     }
 
-    const form = event.currentTarget
-    const data = new FormData(form)
-    data.set('accessKey', accessKey)
-    data.set('subject', 'Contact from portfolio')
-    data.set('replyTo', '@')
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    data.set("accessKey", accessKey);
+    data.set("subject", "Contact from portfolio");
+    data.set("replyTo", "@");
 
-    setSubmitting(true)
+    setSubmitting(true);
     try {
       const response = await fetch(STATICFORMS_URL, {
-        method: 'POST',
+        method: "POST",
         body: data,
-      })
+      });
 
       if (!response.ok) {
-        throw new Error('Submission failed')
+        throw new Error("Submission failed");
       }
 
-      navigate('/success')
+      navigate("/success");
     } catch {
-      setError('Something went wrong. Please try again later.')
+      setError("Something went wrong. Please try again later.");
     } finally {
-      setSubmitting(false)
+      setSubmitting(false);
     }
   }
 
@@ -105,10 +104,14 @@ export function ContactForm() {
       {error ? <p className="form__error">{error}</p> : null}
 
       <div className="form__actions">
-        <button className="btn btn--primary" type="submit" disabled={submitting}>
-          {submitting ? 'Sending…' : 'Submit'}
+        <button
+          className="btn btn--primary"
+          type="submit"
+          disabled={submitting}
+        >
+          {submitting ? "Sending…" : "Submit"}
         </button>
       </div>
     </form>
-  )
+  );
 }
