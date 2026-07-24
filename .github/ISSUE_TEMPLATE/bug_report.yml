@@ -1,0 +1,136 @@
+name: Bug Report
+description: Something isn't working as expected
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Search [existing issues](https://github.com/GeorgeCiesinski/GeorgeCiesinski.github.io/issues) first.
+
+        **Do not post API keys, `.env` contents, or other secrets.**
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Summary
+      description: One or two sentences describing the bug.
+      placeholder: |
+        The contact form submits successfully but never redirects to the success page.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: List the actions that trigger the bug.
+      placeholder: |
+        1. Open the home page
+        2. Fill out the contact form
+        3. Submit the form
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      placeholder: |
+        After a successful submit, the app should navigate to /success.
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      placeholder: |
+        The form clears, but the URL stays on the home page and no success message is shown.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      description: Pick the closest match, or choose **Other** and name it in your summary.
+      options:
+        - Not sure / multiple
+        - Home page
+        - Project detail / carousel
+        - Contact form
+        - Routing
+        - Layout / styling
+        - CI / tooling
+        - Other (describe in summary)
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Where did you see this?
+      options:
+        - Production (Vercel live site)
+        - Local (`npm run vercel` or `npm run dev`)
+        - Vercel Preview deployment
+        - Other (describe below)
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      options:
+        - Chrome / Chromium
+        - Firefox
+        - Safari
+        - Edge
+        - Mobile Safari (iOS)
+        - Chrome for Android
+        - Other (describe below)
+
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      description: Branch, tag, or commit SHA if you know it.
+      placeholder: e.g. main @ a1b2c3d
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Environment details
+      description: Anything that might affect behavior. Delete lines that do not apply.
+      placeholder: |
+        - Device / OS: macOS 15 / iPhone 16 / Windows 11
+        - Screen size: desktop / tablet / phone
+      value: |
+        - Device / OS:
+        - Screen size:
+
+  - type: textarea
+    id: console
+    attributes:
+      label: Console or network errors
+      description: Optional but recommended. Paste relevant browser console errors, failed network requests, or terminal output from local/Vercel dev. Redact API keys and secrets.
+      render: shell
+      placeholder: |
+        Paste relevant error messages or stack traces here.
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Optional. Drag images into this field or paste screenshots of the broken UI.
+      placeholder: Attach screenshots of the broken UI or error state.
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Additional context
+      placeholder: |
+        Related issues, workarounds you tried, or anything else that might help.

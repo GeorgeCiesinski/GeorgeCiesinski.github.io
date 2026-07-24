@@ -1,0 +1,71 @@
+name: Feature Request
+description: Suggest a new feature or improvement
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe the problem you are trying to solve and how you would like the portfolio to behave.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or use case
+      description: What is hard, missing, or frustrating today?
+      placeholder: |
+        Project detail pages do not make it obvious how to return to the full project list on the home page.
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: How should the site behave? Mention pages, components, contact form, or tooling if relevant.
+      placeholder: |
+        Add a clear back link on each project detail page that scrolls to the projects section on the home page.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Optional. Other ways to solve this, or reasons you rejected them.
+      placeholder: |
+        Relying on the browser back button works, but an in-page link would be clearer for visitors.
+
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Likely scope
+      description: Check everything that might be affected.
+      options:
+        - label: Home page
+        - label: Project detail / carousel
+        - label: Contact form
+        - label: Routing
+        - label: Layout / styling / accessibility
+        - label: CI / tooling
+        - label: README or documentation
+
+  - type: textarea
+    id: example
+    attributes:
+      label: Example interaction
+      description: Optional. Show what a visitor would do and what they should see.
+      placeholder: |
+        **Visitor:** Opens a project detail page from the carousel.
+
+        **Site:** Shows a "Back to projects" link that returns to the home page projects section.
+
+  - type: textarea
+    id: links
+    attributes:
+      label: Useful links
+      description: Optional. Related issues, mockups, or references.
+      placeholder: |
+        - Related issue: #123
+        - Mockup: ...
