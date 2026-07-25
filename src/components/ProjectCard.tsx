@@ -1,3 +1,7 @@
+/**
+ * Project thumbnail card for the home-page grid.
+ */
+
 import { Link } from "react-router-dom";
 import type { Project } from "../data/projects";
 
@@ -5,6 +9,7 @@ interface ProjectCardProps {
   project: Project;
 }
 
+/** Thumbnail card linking to a project's detail page. */
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Link className="project-card" to={`/projects/${project.slug}`}>

@@ -1,7 +1,12 @@
+/**
+ * Project detail page resolved from the `/projects/:slug` route.
+ */
+
 import { Link, Navigate, useParams } from "react-router-dom";
 import { ProjectCarousel } from "../components/ProjectCarousel";
 import { getProjectBySlug } from "../data/projects";
 
+/** Resolves `:slug` and redirects home when the project is missing. */
 export function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>();
   const project = slug ? getProjectBySlug(slug) : undefined;

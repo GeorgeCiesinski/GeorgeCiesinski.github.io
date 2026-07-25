@@ -1,3 +1,7 @@
+/**
+ * Application entry: mounts React and loads global styles.
+ */
+
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";

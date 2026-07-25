@@ -1,3 +1,7 @@
+/**
+ * Accessible image/GIF carousel for project detail pages.
+ */
+
 import { useState } from "react";
 import type { ProjectSlide } from "../data/projects";
 
@@ -6,6 +10,7 @@ interface ProjectCarouselProps {
   title: string;
 }
 
+/** Image carousel with optional prev/next controls and slide dots. */
 export function ProjectCarousel({ slides, title }: ProjectCarouselProps) {
   const [index, setIndex] = useState(0);
 
@@ -16,6 +21,7 @@ export function ProjectCarousel({ slides, title }: ProjectCarouselProps) {
   const slide = slides[index];
   const hasMultiple = slides.length > 1;
 
+  // Wrap around so prev on first / next on last stays in range.
   const go = (next: number) => {
     setIndex((next + slides.length) % slides.length);
   };

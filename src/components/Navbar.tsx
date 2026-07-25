@@ -1,6 +1,11 @@
+/**
+ * Site header navigation with responsive mobile menu.
+ */
+
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
+/** Sticky site header with mobile collapse and primary navigation. */
 export function Navbar() {
   const [open, setOpen] = useState(false);
 
@@ -41,6 +46,7 @@ export function Navbar() {
               Home
             </NavLink>
           </li>
+          {/* Hash links so in-page anchors work from any route; Home uses NavLink. */}
           <li>
             <a className="navbar__link" href="/#projects" onClick={close}>
               Projects

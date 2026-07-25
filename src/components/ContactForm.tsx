@@ -1,13 +1,22 @@
+/**
+ * Contact form that submits messages via the StaticForms API.
+ */
+
 import { useState, type FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 
 const STATICFORMS_URL = "https://api.staticforms.xyz/submit";
 
+/**
+ * Posts to StaticForms, then navigates to /success.
+ * Requires VITE_STATICFORMS_ACCESS_KEY at build time.
+ */
 export function ContactForm() {
   const navigate = useNavigate();
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  // Injected at build time from .env / Vercel env vars.
   const accessKey = import.meta.env.VITE_STATICFORMS_ACCESS_KEY as
     string | undefined;
 
@@ -26,6 +35,7 @@ export function ContactForm() {
     const data = new FormData(form);
     data.set("accessKey", accessKey);
     data.set("subject", "Contact from portfolio");
+    // StaticForms: "@" replies to the submitter's email field.
     data.set("replyTo", "@");
 
     setSubmitting(true);
@@ -93,6 +103,7 @@ export function ContactForm() {
         />
       </div>
 
+      {/* Honeypot — hidden via CSS; bots that fill it are rejected by StaticForms */}
       <input
         className="form__honeypot"
         type="text"

@@ -1,3 +1,5 @@
+// Component styles: navbar, cards, carousel, forms, footer, and badges.
+
 @use "tokens" as *;
 
 // Navbar
@@ -255,6 +257,7 @@
   font-size: 0.95rem;
 
   @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    // Soften caption when backdrop-filter is supported; solid fallback above.
     background: hsla(202, 55%, 51%, 0.55);
     backdrop-filter: blur(4px);
   }
@@ -351,6 +354,7 @@
   }
 }
 
+// Visually hidden spam trap; paired with ContactForm honeypot input.
 .form__honeypot {
   display: none;
 }

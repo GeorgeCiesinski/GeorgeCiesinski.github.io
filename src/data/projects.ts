@@ -1,17 +1,25 @@
+/**
+ * Portfolio project catalog and helpers for the home grid and detail routes.
+ */
+
 export type ProjectSection = "web" | "apps";
 
+/** A single screenshot or GIF shown in the project detail carousel. */
 export interface ProjectSlide {
   src: string;
   caption: string;
 }
 
 export interface Project {
+  /** URL segment for `/projects/:slug`. */
   slug: string;
   title: string;
   category: string;
   description: string;
   tech: string[];
+  /** Home-grid thumbnail; distinct from detail `slides`. */
   thumbnail: string;
+  /** Optional outbound links shown on the detail page. */
   github?: string;
   demo?: string;
   slides: ProjectSlide[];
@@ -328,6 +336,7 @@ export const projects: Project[] = [
   },
 ];
 
+/** Looks up a project by its route slug, or `undefined` if unknown. */
 export function getProjectBySlug(slug: string): Project | undefined {
   return projects.find((project) => project.slug === slug);
 }

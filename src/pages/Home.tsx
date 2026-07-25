@@ -1,9 +1,13 @@
+/**
+ * Landing page: about section, project grid, and contact form.
+ */
+
 import { ContactForm } from "../components/ContactForm";
 import { ProjectCard } from "../components/ProjectCard";
 import { projects } from "../data/projects";
 
+/** Landing page: about, project grid, and contact form. */
 export function Home() {
-
   return (
     <div className="container">
       <section className="section" aria-labelledby="about-heading">
