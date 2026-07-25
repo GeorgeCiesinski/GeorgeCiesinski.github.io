@@ -27,6 +27,37 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: "poke-guesser",
+    title: "Poke-guesser Bot",
+    category: "Back-end",
+    description:
+      "A Discord bot game where players guess Pok\u00e9mon from images. Tracks scores on a leaderboard and supports multilingual reveals via PokeAPI.",
+    tech: ["JavaScript", "discord.js", "pokeapi.co", "PostgreSQL", "Docker"],
+    thumbnail: "/img/front-page/pokebot-thumb.png",
+    github: "https://github.com/GeorgeCiesinski/poke-guesser-bot",
+    slides: [
+      {
+        src: "/img/poke-bot/explore.png",
+        caption:
+          "The !explore admin command generates a new pockemon for users to catch",
+      },
+      {
+        src: "/img/poke-bot/catch.png",
+        caption:
+          "The $catch player command allows players to guess a pokemon name.",
+      },
+      {
+        src: "/img/poke-bot/leaderboard.png",
+        caption: "The $leaderboard command shows the top 20 players.",
+      },
+      {
+        src: "/img/poke-bot/reveal.png",
+        caption:
+          "The !reveal admin command reveals the pokemon if players are unable to guess it. The pokemon name is shown in multiple languages.",
+      },
+    ],
+  },
+  {
     slug: "todo-web-app",
     title: "Todo Web App",
     category: "Front-end",
@@ -192,37 +223,6 @@ export const projects: Project[] = [
       {
         src: "/img/flask-api/flask-logs.png",
         caption: "Snapshot of console output as requests are made.",
-      },
-    ],
-  },
-  {
-    slug: "poke-guesser",
-    title: "Poke-guesser Bot",
-    category: "Back-end",
-    description:
-      "A Discord bot game where players guess Pok\u00e9mon from images. Tracks scores on a leaderboard and supports multilingual reveals via PokeAPI.",
-    tech: ["JavaScript", "discord.js", "pokeapi.co", "PostgreSQL", "Docker"],
-    thumbnail: "/img/front-page/pokebot-thumb.png",
-    github: "https://github.com/GeorgeCiesinski/poke-guesser-bot",
-    slides: [
-      {
-        src: "/img/poke-bot/explore.png",
-        caption:
-          "The !explore admin command generates a new pockemon for users to catch",
-      },
-      {
-        src: "/img/poke-bot/catch.png",
-        caption:
-          "The $catch player command allows players to guess a pokemon name.",
-      },
-      {
-        src: "/img/poke-bot/leaderboard.png",
-        caption: "The $leaderboard command shows the top 20 players.",
-      },
-      {
-        src: "/img/poke-bot/reveal.png",
-        caption:
-          "The !reveal admin command reveals the pokemon if players are unable to guess it. The pokemon name is shown in multiple languages.",
       },
     ],
   },
