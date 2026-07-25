@@ -1,0 +1,98 @@
+@use '../variables' as *;
+
+.navbar {
+  background: var(--color-primary);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: $nav-height;
+  gap: 1rem;
+}
+
+.navbar__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--color-chrome);
+  font-size: 1.35rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+
+  &:hover {
+    color: var(--color-text-inverse);
+  }
+
+  img {
+    height: 2.5rem;
+    width: auto;
+  }
+}
+
+.navbar__toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 2px solid var(--color-chrome);
+  border-radius: $radius;
+  background: transparent;
+  color: var(--color-chrome);
+  cursor: pointer;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.navbar__links {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  gap: 0.25rem;
+
+  &--open {
+    display: flex;
+    position: absolute;
+    inset-inline: 0;
+    top: $nav-height;
+    background: var(--color-primary);
+    padding: 1rem 1rem 1.25rem;
+    border-top: 1px solid color-mix(in srgb, var(--color-chrome) 25%, transparent);
+  }
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.25rem;
+    position: static;
+    padding: 0;
+    border: 0;
+  }
+}
+
+.navbar__link {
+  display: block;
+  padding: 0.55rem 0.85rem;
+  color: var(--color-chrome);
+  font-size: 1.05rem;
+  border-radius: $radius;
+  transition:
+    color $transition,
+    background $transition;
+
+  &:hover,
+  &--active {
+    color: var(--color-text-inverse);
+  }
+}

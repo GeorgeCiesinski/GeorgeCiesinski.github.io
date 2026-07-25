@@ -1,0 +1,84 @@
+@use '../variables' as *;
+
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 665px;
+}
+
+.carousel__frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: $radius;
+  background: var(--color-surface-hover);
+  border: 1px solid var(--color-border);
+}
+
+.carousel__image {
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  margin-inline: auto;
+}
+
+.carousel__caption {
+  margin: 0;
+  padding: 0.85rem 1rem;
+  background: color-mix(in srgb, var(--color-secondary) 90%, transparent);
+  color: var(--color-text-inverse);
+  font-size: 0.95rem;
+
+  @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    // Soften caption when backdrop-filter is supported; solid fallback above.
+    background: color-mix(in srgb, var(--color-secondary) 55%, transparent);
+    backdrop-filter: blur(4px);
+  }
+}
+
+.carousel__controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.carousel__btn {
+  width: 3rem;
+  height: 3rem;
+  border: 0;
+  border-radius: 0.75rem;
+  background: var(--color-secondary);
+  color: var(--color-text-inverse);
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: opacity $transition;
+
+  &:hover {
+    opacity: 0.85;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+}
+
+.carousel__dots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.75rem;
+}
+
+.carousel__dot {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  border: 0;
+  background: var(--color-border);
+  cursor: pointer;
+  padding: 0;
+
+  &--active {
+    background: var(--color-primary);
+  }
+}

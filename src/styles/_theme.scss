@@ -1,0 +1,45 @@
+:root {
+  // Brand accents
+  --color-primary: #1c658c;
+  --color-secondary: #3c94c7;
+
+  // Canvas body & cards
+  --color-surface: #a3becc;
+  --color-surface-muted: #8eabbb;
+  --color-surface-hover: #ffffff;
+
+  // Text/icons on nav & footer
+  --color-chrome: #ffffff;
+
+  // Text
+  --color-text: #1a1a1a;
+  --color-text-secondary: #5a6a75;
+  --color-text-inverse: #ffffff;
+
+  // Border
+  --color-border: #c5d8e6;
+  --color-border-hover: #ffffff;
+}
+
+:root[data-theme='dark'] {
+  // Brand accents — lifted for contrast on dark surfaces
+  --color-primary: #4aa3d4;
+  --color-secondary: #6bb8de;
+
+  // Canvas body & cards
+  --color-surface: #152530;
+  --color-surface-muted: #0f1c24;
+  --color-surface-hover: #1e3544;
+
+  // Text/icons on nav & footer
+  --color-chrome: #e8f1f6;
+
+  // Text
+  --color-text: #e8eef2;
+  --color-text-secondary: #8fa3b0;
+  --color-text-inverse: #1a1a1a;
+
+  // Border
+  --color-border: #2a4150;
+  --color-border-hover: #4a6f85;
+}

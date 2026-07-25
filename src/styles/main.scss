@@ -1,5 +1,12 @@
 // Entry stylesheet — re-exports style partials only.
 
-@use "base";
-@use "layout";
-@use "components";
+@use 'normalize' as *;
+@use 'reset' as *;
+@use 'theme' as *;
+@use 'base' as *;
+@use 'layout' as *;
+@use 'components/carousel' as *;
+@use 'components/contact-form' as *;
+@use 'components/footer' as *;
+@use 'components/nav' as *;
+@use 'components/project-card' as *;

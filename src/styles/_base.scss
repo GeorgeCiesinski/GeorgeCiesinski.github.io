@@ -1,24 +1,13 @@
-// Resets, typography, and global element defaults.
-
-@use "tokens" as *;
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
+@use "fonts" as *;
+@use "variables" as *;
 
 body {
   margin: 0;
   font-family: $font-sans;
   font-size: 1rem;
   line-height: 1.6;
-  color: $color-text;
-  background: $color-surface;
+  color: var(--color-text);
+  background: var(--color-surface);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -29,11 +18,11 @@ img {
 }
 
 a {
-  color: $color-primary;
+  color: var(--color-primary);
   text-decoration: none;
 
   &:hover {
-    color: $color-secondary;
+    color: var(--color-secondary);
   }
 }
 
@@ -54,4 +43,38 @@ button,
 input,
 textarea {
   font: inherit;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1.1rem;
+  border-radius: $radius;
+  border: 2px solid var(--color-primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background $transition,
+    color $transition;
+
+  &--primary {
+    background: var(--color-surface);
+    color: var(--color-primary);
+
+    &:hover {
+      background: var(--color-primary);
+      color: var(--color-text-inverse);
+    }
+  }
+
+  &--ghost {
+    background: transparent;
+    color: var(--color-primary);
+
+    &:hover {
+      background: var(--color-primary);
+      color: var(--color-surface);
+    }
+  }
 }
