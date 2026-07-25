@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "vercel": "vercel dev",
+    "vercel": "vercel dev --local-config ./vercel-dev.json",
     "typecheck": "tsc -b --noEmit",
     "build": "vite build",
     "preview": "vite preview",
