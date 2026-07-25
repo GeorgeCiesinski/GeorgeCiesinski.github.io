@@ -9,7 +9,6 @@ export interface Project {
   slug: string;
   title: string;
   category: string;
-  section: ProjectSection;
   description: string;
   tech: string[];
   thumbnail: string;
@@ -23,7 +22,6 @@ export const projects: Project[] = [
     slug: "todo-web-app",
     title: "Todo Web App",
     category: "Front-end",
-    section: "web",
     description:
       "A Webpack-powered todo app with multiple lists, optional checklists, theme switching, and a responsive side menu that collapses to a hamburger on small screens.",
     tech: ["HTML", "CSS", "SASS", "JavaScript", "Webpack"],
@@ -57,32 +55,9 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "restaurant-page",
-    title: "Restaurant Page",
-    category: "Front-end",
-    section: "web",
-    description:
-      "A multi-page restaurant site served from a single URL using Webpack tab-based navigation and hashed production assets.",
-    tech: ["HTML", "SASS", "JavaScript", "Webpack"],
-    thumbnail: "/img/front-page/restaurant-thumb.png",
-    github: "https://github.com/GeorgeCiesinski/restaurant-page",
-    demo: "https://georgeciesinski.github.io/restaurant-page/",
-    slides: [
-      {
-        src: "/img/restaurant-page/tab-based-navigation.gif",
-        caption: "Multiple pages can be viewed at the same URL",
-      },
-      {
-        src: "/img/restaurant-page/hashed-names.png",
-        caption: "Generate hashed assets by running npm run build",
-      },
-    ],
-  },
-  {
     slug: "library-app",
     title: "Library App",
     category: "Front-end",
-    section: "web",
     description:
       "Track books you are reading or have read. Add titles by ISBN for automatic cover lookup, toggle read status, and switch light/dark mode.",
     tech: ["HTML", "CSS", "SASS", "JavaScript"],
@@ -121,7 +96,6 @@ export const projects: Project[] = [
     slug: "admin-dashboard",
     title: "Admin Dashboard",
     category: "Front-end",
-    section: "web",
     description:
       "An admin UI with side and top navigation, live search filtering, and a responsive layout built with CSS grid and flexbox.",
     tech: ["HTML", "CSS", "SASS", "JavaScript"],
@@ -147,53 +121,9 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "sign-up-form",
-    title: "Sign-up Form",
-    category: "Front-end",
-    section: "web",
-    description:
-      "A splash-page sign-up form with regex phone validation and matching email fields, built as the landing for a recipes site concept.",
-    tech: ["HTML", "CSS", "SASS", "JavaScript"],
-    thumbnail: "/img/front-page/sign-up-thumb.png",
-    github: "https://github.com/GeorgeCiesinski/sign-up-form",
-    demo: "https://georgeciesinski.github.io/sign-up-form/",
-    slides: [
-      {
-        src: "/img/sign-up-form/validation.png",
-        caption:
-          "Phone numbers using regex and matching email fields using JavaScript",
-      },
-    ],
-  },
-  {
-    slug: "calculator-web-app",
-    title: "Calculator Web App",
-    category: "Front-end",
-    section: "web",
-    description:
-      "A browser calculator inspired by the Apple Watch layout, with full operator support and console output showing BEDMAS evaluation steps.",
-    tech: ["HTML", "CSS", "SASS", "JavaScript"],
-    thumbnail: "/img/front-page/calculator-thumb.png",
-    github: "https://github.com/GeorgeCiesinski/calculator-web-app",
-    demo: "https://georgeciesinski.github.io/calculator-web-app/",
-    slides: [
-      {
-        src: "/img/calculator-web-app/calculator-display.png",
-        caption:
-          "This app has the same functions as the apple watch calculator and was designed with a blue color theme",
-      },
-      {
-        src: "/img/calculator-web-app/calculator-action.gif",
-        caption:
-          "The calculator can evaluate an expression with all available operators. Console output included to show the BEDMAS steps",
-      },
-    ],
-  },
-  {
     slug: "pixel-sketchpad",
     title: "Pixel Sketchpad",
     category: "Front-end",
-    section: "web",
     description:
       "A pixel drawing tool with color selection, grid size controls, and a background eraser that preserves drawings when the canvas color changes.",
     tech: ["HTML", "CSS", "SASS", "JavaScript"],
@@ -214,52 +144,9 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "rock-paper-scissors-website",
-    title: "Rock Paper Scissors Website",
-    category: "Front-end",
-    section: "web",
-    description:
-      "A simple in-browser Rock Paper Scissors game built with HTML, CSS/SASS, and JavaScript.",
-    tech: ["HTML", "CSS", "SASS", "JavaScript"],
-    thumbnail: "/img/front-page/rps-thumb.png",
-    github: "https://github.com/GeorgeCiesinski/rock-paper-scissors-website",
-    demo: "https://georgeciesinski.github.io/rock-paper-scissors-website/",
-    slides: [
-      {
-        src: "/img/rps/rps.gif",
-        caption: "Try it by visiting the project link!",
-      },
-    ],
-  },
-  {
-    slug: "resume",
-    title: "Bootstrap Resume",
-    category: "Front-end",
-    section: "web",
-    description:
-      "A responsive single-page resume site with collapsible experience and skills sections, progress bars, and fade effects for a cleaner layout.",
-    tech: ["HTML", "CSS", "SASS", "Bootstrap 5"],
-    thumbnail: "/img/front-page/resume-thumb.png",
-    github: "https://github.com/GeorgeCiesinski/bootstrap-resume",
-    demo: "https://georgeciesinski.github.io/resume/",
-    slides: [
-      {
-        src: "/img/resume/experience.png",
-        caption:
-          "Work Experience has a collapsible section with a fade effect to declutter the page.",
-      },
-      {
-        src: "/img/resume/skills.png",
-        caption:
-          "Programming languages and skills are displayed using progress bars. This section contains the same collapse and fade effect as the work experience section.",
-      },
-    ],
-  },
-  {
     slug: "flask-api",
     title: "Flask RESTful API",
     category: "Back-end",
-    section: "web",
     description:
       "A Flask-RESTful API for registering users, authenticating, and creating/retrieving/deleting stores and items, backed by SQLite and deployable on Heroku.",
     tech: ["Python", "Flask", "Flask-RESTful", "SQLite", "Heroku"],
@@ -304,7 +191,6 @@ export const projects: Project[] = [
     slug: "poke-guesser",
     title: "Poke-guesser Bot",
     category: "Back-end",
-    section: "apps",
     description:
       "A Discord bot game where players guess Pok\u00e9mon from images. Tracks scores on a leaderboard and supports multilingual reveals via PokeAPI.",
     tech: ["JavaScript", "discord.js", "pokeapi.co", "PostgreSQL", "Docker"],
@@ -336,7 +222,6 @@ export const projects: Project[] = [
     slug: "social-media",
     title: "Social Media Analysis",
     category: "Data Analysis",
-    section: "apps",
     description:
       "Scrapes Reddit posts, stores data in PostgreSQL, and plots sentiment analysis charts including timelines, pie charts, and upvote distributions.",
     tech: [
@@ -384,7 +269,6 @@ export const projects: Project[] = [
     slug: "text-script",
     title: "Text-Script",
     category: "App",
-    section: "apps",
     description:
       "A desktop expansion tool that pastes textblock templates from keyboard shortcuts into any text field \u2014 built to speed up customer email responses.",
     tech: ["Python", "Pynput", "Pyperclip"],
@@ -407,7 +291,6 @@ export const projects: Project[] = [
     slug: "image-filters",
     title: "Image Filters",
     category: "App",
-    section: "apps",
     description:
       "A desktop image filter app using OpenCV and Tkinter, with sliders for adjustments, resizable preview, save, and logging.",
     tech: ["Python", "OpenCV", "TKinter"],
@@ -447,8 +330,4 @@ export const projects: Project[] = [
 
 export function getProjectBySlug(slug: string): Project | undefined {
   return projects.find((project) => project.slug === slug);
-}
-
-export function getProjectsBySection(section: ProjectSection): Project[] {
-  return projects.filter((project) => project.section === section);
 }

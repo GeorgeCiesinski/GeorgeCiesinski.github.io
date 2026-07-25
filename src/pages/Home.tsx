@@ -1,10 +1,8 @@
 import { ContactForm } from "../components/ContactForm";
 import { ProjectCard } from "../components/ProjectCard";
-import { getProjectsBySection } from "../data/projects";
+import { projects } from "../data/projects";
 
 export function Home() {
-  const webProjects = getProjectsBySection("web");
-  const appProjects = getProjectsBySection("apps");
 
   return (
     <div className="container">
@@ -39,24 +37,15 @@ export function Home() {
       </section>
 
       <section
-        className="section"
+        className="projects"
         id="projects"
         aria-labelledby="projects-heading"
       >
         <h2 className="section__title" id="projects-heading">
-          Web Development
+          Projects
         </h2>
         <div className="grid">
-          {webProjects.map((project) => (
-            <ProjectCard key={project.slug} project={project} />
-          ))}
-        </div>
-
-        <h2 className="section__title" style={{ marginTop: "2.5rem" }}>
-          Apps and Bots
-        </h2>
-        <div className="grid">
-          {appProjects.map((project) => (
+          {projects.map((project) => (
             <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
