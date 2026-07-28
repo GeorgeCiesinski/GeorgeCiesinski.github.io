@@ -1,4 +1,4 @@
-@use '../variables' as *;
+@use "../variables" as *;
 
 .navbar {
   background: var(--color-primary);
@@ -67,7 +67,8 @@
     top: $nav-height;
     background: var(--color-primary);
     padding: 1rem 1rem 1.25rem;
-    border-top: 1px solid color-mix(in srgb, var(--color-chrome) 25%, transparent);
+    border-top: 1px solid
+      color-mix(in srgb, var(--color-chrome) 25%, transparent);
   }
 
   @media (min-width: 768px) {

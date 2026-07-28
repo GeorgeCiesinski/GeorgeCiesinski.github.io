@@ -3,7 +3,7 @@
  */
 
 import { useState } from "react";
-import { useTheme } from "../theme/ThemeProvider";
+import { useTheme } from "../theme/theme-context";
 
 /**
  * Renders a Theme button and a menu of light / dark / system options.

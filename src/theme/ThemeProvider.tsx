@@ -1,18 +1,12 @@
 /**
- * React context for theme preference (light / dark / system).
+ * Theme preference provider component.
  *
- * Keeps `document.documentElement` and localStorage in sync with the
- * user's preference, and follows OS appearance changes when preference
- * is "system".
+ * Syncs preference to the DOM and localStorage, and follows OS appearance
+ * when preference is `"system"`. Context and `useTheme` live in
+ * `theme-context.ts` so this file only exports a component (Fast Refresh).
  */
 
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-  type ReactNode,
-} from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import {
   applyTheme,
   getStoredPreference,
@@ -20,40 +14,19 @@ import {
   THEME_STORAGE_KEY,
   type ThemePreference,
 } from "./theme";
-
-type ThemeContextValue = {
-  preference: ThemePreference;
-  setPreference: (preference: ThemePreference) => void;
-};
-
-/** Null until a ThemeProvider mounts — lets useTheme detect misuse. */
-const ThemeContext = createContext<ThemeContextValue | null>(null);
+import { ThemeContext } from "./theme-context";
 
 /**
- * Reads the current theme preference and updater from context.
- *
- * @returns Preference (`light` | `dark` | `system`) and `setPreference`.
- * @throws {Error} If called outside a `ThemeProvider`.
- */
-export function useTheme(): ThemeContextValue {
-  const value = useContext(ThemeContext);
-  if (!value) {
-    throw new Error("useTheme must be used within ThemeProvider");
-  }
-  return value;
-}
-
-/**
- * Provides theme preference state to descendants and syncs it to the DOM
- * and localStorage. When preference is `system`, also listens for OS
- * appearance changes.
+ * Provides theme preference state to descendants via `ThemeContext`.
  *
  * @param props - Component props.
- * @param props.children - Tree that can call `useTheme`.
+ * @param props.children - Tree that can call `useTheme` from `theme-context`.
  * @returns Context provider wrapping `children`.
  */
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [preference, setPreferenceState] = useState<ThemePreference>(() => getStoredPreference());
+  const [preference, setPreferenceState] = useState<ThemePreference>(() =>
+    getStoredPreference(),
+  );
 
   useEffect(() => {
     if (preference !== "system") return;
