@@ -9,6 +9,26 @@
       content="Portfolio of George Ciesinski — software developer specializing in JavaScript, Python, and full-stack web development."
     />
     <title>George Ciesinski — Portfolio</title>
+    <script>
+      /** 
+       * Flash of unstyled content (FOUC)
+       * 
+       * Automatically invokes to prevent screen flash before React finishes loading.
+       */
+      (function () {
+        var key = "theme-pref";
+        var pref = localStorage.getItem(key);
+        // If no preset is set, default to system
+        if (pref !== "light" && pref !== "dark" && pref !== "system") pref = "system";
+        // Dark mode when set, or when system matches dark, otherwise light
+        var dark = 
+          pref === "dark" ||
+          (pref === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+        var theme = dark ? "dark" : "light";
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

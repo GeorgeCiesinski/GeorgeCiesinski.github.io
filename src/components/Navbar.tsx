@@ -1,9 +1,9 @@
 /**
  * Site header navigation with responsive mobile menu.
  */
-
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { ThemeMenu } from "./ThemeMenu";
 
 /** Sticky site header with mobile collapse and primary navigation. */
 export function Navbar() {
@@ -56,6 +56,9 @@ export function Navbar() {
             <a className="navbar__link" href="/#contact" onClick={close}>
               Contact Me
             </a>
+          </li>
+          <li>
+            <ThemeMenu />
           </li>
         </ul>
       </div>
