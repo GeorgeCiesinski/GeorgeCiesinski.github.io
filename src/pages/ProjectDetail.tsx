@@ -23,7 +23,6 @@ export function ProjectDetail() {
 
       <h1
         className="about__title"
-        style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)" }}
       >
         <span
           className="badge badge--primary"
