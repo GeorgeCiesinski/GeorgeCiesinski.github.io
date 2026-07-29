@@ -29,12 +29,7 @@ export function Home() {
               also have experience with C#, HTML/CSS, SASS and SQL.
             </p>
             <p>
-              I received an Advanced Diploma in Electro-Mechanical Engineering
-              (Robotics &amp; automation) from Humber College in Toronto,
-              Ontario. I learned how to program PLCs, six-axis robots, and
-              integrated circuits. After graduating, I built bots, desktop apps,
-              and focused on back-end development before setting my sights on a
-              full-stack development career.
+              I enjoy building websites, bots, desktop apps.
             </p>
           </div>
         </div>

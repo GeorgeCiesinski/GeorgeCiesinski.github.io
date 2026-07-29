@@ -34,18 +34,6 @@ export function Navbar() {
           id="primary-nav"
           className={`navbar__links${open ? " navbar__links--open" : ""}`}
         >
-          <li>
-            <NavLink
-              className={({ isActive }) =>
-                `navbar__link${isActive ? " navbar__link--active" : ""}`
-              }
-              to="/"
-              end
-              onClick={close}
-            >
-              Home
-            </NavLink>
-          </li>
           {/* Hash links so in-page anchors work from any route; Home uses NavLink. */}
           <li>
             <a className="navbar__link" href="/#projects" onClick={close}>
