@@ -103,13 +103,14 @@ export function ContactForm() {
         />
       </div>
 
-      {/* Honeypot — hidden via CSS; bots that fill it are rejected by StaticForms */}
+      {/* hidden via CSS */}
       <input
-        className="form__honeypot"
+        className="form__note"
         type="text"
-        name="honeypot"
+        name="note"
         tabIndex={-1}
         autoComplete="off"
+        aria-hidden="true"
       />
 
       {error ? <p className="form__error">{error}</p> : null}
