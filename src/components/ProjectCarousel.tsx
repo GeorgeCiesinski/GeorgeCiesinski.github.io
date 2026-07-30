@@ -54,6 +54,18 @@ export function ProjectCarousel({ slides, title }: ProjectCarouselProps) {
             >
               ‹
             </button>
+            <div className="carousel__dots" role="tablist" aria-label="Slides">
+              {slides.map((_, i) => (
+                <button
+                  key={slides[i].src}
+                  type="button"
+                  className={`carousel__dot${i === index ? " carousel__dot--active" : ""}`}
+                  aria-label={`Go to slide ${i + 1}`}
+                  aria-selected={i === index}
+                  onClick={() => setIndex(i)}
+                />
+              ))}
+            </div>
             <button
               className="carousel__btn"
               type="button"
@@ -62,18 +74,6 @@ export function ProjectCarousel({ slides, title }: ProjectCarouselProps) {
             >
               ›
             </button>
-          </div>
-          <div className="carousel__dots" role="tablist" aria-label="Slides">
-            {slides.map((_, i) => (
-              <button
-                key={slides[i].src}
-                type="button"
-                className={`carousel__dot${i === index ? " carousel__dot--active" : ""}`}
-                aria-label={`Go to slide ${i + 1}`}
-                aria-selected={i === index}
-                onClick={() => setIndex(i)}
-              />
-            ))}
           </div>
         </>
       ) : null}

@@ -37,6 +37,8 @@
 
 .carousel__controls {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   gap: 0.5rem;
   margin-top: 0.75rem;
 }
@@ -70,8 +72,8 @@
 }
 
 .carousel__dot {
-  width: 0.65rem;
-  height: 0.65rem;
+  width: 1rem;
+  height: 1rem;
   border-radius: 50%;
   border: 0;
   background: var(--color-border);
