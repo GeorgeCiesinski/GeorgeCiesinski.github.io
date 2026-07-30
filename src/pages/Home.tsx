@@ -28,9 +28,7 @@ export function Home() {
               programming. I am most experienced in Javascript and Python, but I
               also have experience with C#, HTML/CSS, SASS and SQL.
             </p>
-            <p>
-              I enjoy building websites, bots, desktop apps.
-            </p>
+            <p>I enjoy building websites, bots, desktop apps.</p>
           </div>
         </div>
       </section>

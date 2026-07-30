@@ -21,9 +21,7 @@ export function ProjectDetail() {
         ← Back to projects
       </Link>
 
-      <h1
-        className="about__title"
-      >
+      <h1 className="about__title">
         <span
           className="badge badge--primary"
           style={{ marginRight: "0.65rem" }}

@@ -15,16 +15,10 @@ For local Vercel (SPA + future `/api` functions):
 npm run vercel
 ```
 
-`npm run vercel` uses [`vercel-dev.json`](vercel-dev.json) (no catch-all SPA rewrite) so Vite can serve modules and deep links. Production keeps the catch-all rewrite in [`vercel.json`](vercel.json).
-
-Optional contact form key (StaticForms):
-
-```bash
-cp .env.example .env
-# set VITE_STATICFORMS_ACCESS_KEY
-```
+`npm run vercel` uses `[vercel-dev.json](vercel-dev.json)` (no catch-all SPA rewrite) so Vite can serve modules and deep links. Production keeps the catch-all rewrite in `[vercel.json](vercel.json)`.
 
 ## Scripts
+
 
 | Script             | Purpose                              |
 | ------------------ | ------------------------------------ |
@@ -34,6 +28,9 @@ cp .env.example .env
 | `npm run preview`  | Preview the production build locally |
 | `npm run vercel`   | Local Vercel via `vercel-dev.json`   |
 
+
+
+
 ## Build
 
 ```bash
@@ -41,9 +38,12 @@ npm run build
 npm run preview
 ```
 
+
+
 ## Technology
 
 - React
 - TypeScript
-- Vite
+- Vite & Vitest
 - SCSS
+

@@ -3,4 +3,4 @@ export type ContactRequest = {
   email?: string;
   message?: string;
   note?: string;
-}
+};

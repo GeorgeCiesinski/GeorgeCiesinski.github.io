@@ -1,48 +1,47 @@
 /**
- * Contact form that submits messages via the StaticForms API.
+ * Contact form that POSTs JSON to the Vercel `/api/contact` serverless function.
  */
 
 import { useState, type FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 
-const STATICFORMS_URL = "https://api.staticforms.xyz/submit";
-
 /**
- * Posts to StaticForms, then navigates to /success.
- * Requires VITE_STATICFORMS_ACCESS_KEY at build time.
+ * Renders the portfolio contact form (name, email, message, honeypot).
+ * On success, navigates to `/success`; on failure, shows an inline error.
+ *
+ * @returns The contact form element.
  */
 export function ContactForm() {
   const navigate = useNavigate();
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Injected at build time from .env / Vercel env vars.
-  const accessKey = import.meta.env.VITE_STATICFORMS_ACCESS_KEY as
-    string | undefined;
-
+  /**
+   * Submits form fields as JSON to `/api/contact`.
+   *
+   * @param event - React submit event for the contact `<form>`.
+   * @returns Resolves when the request finishes (success navigate or error state).
+   */
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setError(null);
 
-    if (!accessKey) {
-      setError(
-        "Contact form is not configured. Set VITE_STATICFORMS_ACCESS_KEY.",
-      );
-      return;
-    }
-
     const form = event.currentTarget;
-    const data = new FormData(form);
-    data.set("accessKey", accessKey);
-    data.set("subject", "Contact from portfolio");
-    // StaticForms: "@" replies to the submitter's email field.
-    data.set("replyTo", "@");
+    const formData = new FormData(form);
+
+    const payload = {
+      name: String(formData.get('name') ?? ""),
+      email: String(formData.get('email') ?? ""),
+      message: String(formData.get('message') ?? ""),
+      note: String(formData.get('note') ?? ""),
+    }
 
     setSubmitting(true);
     try {
-      const response = await fetch(STATICFORMS_URL, {
+      const response = await fetch('/api/contact', {
         method: "POST",
-        body: data,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
       });
 
       if (!response.ok) {
