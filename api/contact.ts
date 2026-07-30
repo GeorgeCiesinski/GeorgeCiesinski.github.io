@@ -21,7 +21,7 @@ type ContactApiResponse = {
 
 /**
  * Basic shape check — not full RFC validation.
- * 
+ *
  * @param email - Address to validate.
  * @returns True if the string looks like an email.
  */
@@ -32,7 +32,7 @@ function validateEmail(email: string): boolean {
 
 /**
  * Escape user text before embedding in the HTML email body.
- * 
+ *
  * @param value - Untrusted string from the form.
  * @returns HTML-safe string with entities escaped.
  */
@@ -48,7 +48,7 @@ function escapeHtml(value: string): string {
 /**
  * POST /api/contact
  * Body: { name, email, message, note? } — `note` is a honeypot (silent success if filled).
- * 
+ *
  * @param req - Incoming request (`method` and JSON or string `body`).
  * @param res - Vercel-style response with fluent `status` / `json`.
  * @returns The same `res` after writing a status and JSON body.
@@ -118,8 +118,8 @@ export default async function handler(
     }
 
     return res.status(200).json({ answer: "Message sent successfully" });
-    // Catch unexpected error
   } catch (error) {
+    // Unexpected throw from Resend or runtime (not the { error } return shape).
     console.error("Contact handler error:", error);
     return res.status(500).json({ error: "Unknown error" });
   }

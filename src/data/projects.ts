@@ -336,7 +336,12 @@ export const projects: Project[] = [
   },
 ];
 
-/** Looks up a project by its route slug, or `undefined` if unknown. */
+/**
+ * Looks up a project by its route slug.
+ *
+ * @param slug - URL slug from `/projects/:slug`.
+ * @returns Matching project, or `undefined` if unknown.
+ */
 export function getProjectBySlug(slug: string): Project | undefined {
   return projects.find((project) => project.slug === slug);
 }

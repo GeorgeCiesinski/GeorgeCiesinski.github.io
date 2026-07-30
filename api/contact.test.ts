@@ -24,6 +24,11 @@ type MockRes = {
   json: (body: unknown) => MockRes;
 };
 
+/**
+ * Builds a fluent mock of Vercel-style `status` / `json` for handler tests.
+ *
+ * @returns Mock response that records `statusCode` and `jsonBody`.
+ */
 function createMockRes(): MockRes {
   const res: MockRes = {
     status(code) {

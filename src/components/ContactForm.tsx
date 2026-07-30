@@ -30,15 +30,15 @@ export function ContactForm() {
     const formData = new FormData(form);
 
     const payload = {
-      name: String(formData.get('name') ?? ""),
-      email: String(formData.get('email') ?? ""),
-      message: String(formData.get('message') ?? ""),
-      note: String(formData.get('note') ?? ""),
-    }
+      name: String(formData.get("name") ?? ""),
+      email: String(formData.get("email") ?? ""),
+      message: String(formData.get("message") ?? ""),
+      note: String(formData.get("note") ?? ""),
+    };
 
     setSubmitting(true);
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),

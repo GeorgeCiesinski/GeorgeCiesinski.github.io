@@ -8,7 +8,7 @@ import react from "@vitejs/plugin-react";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // Vitest: node env; suite may be empty until tests are added.
+  // Vitest: Node environment for serverless API unit tests (e.g. api/contact.test.ts).
   test: {
     environment: "node",
     passWithNoTests: true,

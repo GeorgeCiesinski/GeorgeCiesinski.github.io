@@ -10,7 +10,14 @@ interface ProjectCarouselProps {
   title: string;
 }
 
-/** Image carousel with optional prev/next controls and slide dots. */
+/**
+ * Image carousel with optional prev/next controls and slide dots.
+ *
+ * @param props - Component props.
+ * @param props.slides - Screenshots/GIFs to cycle through.
+ * @param props.title - Project title used for accessibility labels.
+ * @returns Carousel UI, or `null` when `slides` is empty.
+ */
 export function ProjectCarousel({ slides, title }: ProjectCarouselProps) {
   const [index, setIndex] = useState(0);
 
