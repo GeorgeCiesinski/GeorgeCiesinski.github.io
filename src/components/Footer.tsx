@@ -1,3 +1,7 @@
+/**
+ * Site footer with external profile links and copyright.
+ */
+
 const links = [
   {
     href: "https://github.com/GeorgeCiesinski",
@@ -16,6 +20,7 @@ const links = [
   },
 ];
 
+/** Site footer with social links and copyright year. */
 export function Footer() {
   const year = new Date().getFullYear();
 

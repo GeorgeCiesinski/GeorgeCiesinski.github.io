@@ -1,3 +1,7 @@
+/**
+ * Accessible image/GIF carousel for project detail pages.
+ */
+
 import { useState } from "react";
 import type { ProjectSlide } from "../data/projects";
 
@@ -6,6 +10,14 @@ interface ProjectCarouselProps {
   title: string;
 }
 
+/**
+ * Image carousel with optional prev/next controls and slide dots.
+ *
+ * @param props - Component props.
+ * @param props.slides - Screenshots/GIFs to cycle through.
+ * @param props.title - Project title used for accessibility labels.
+ * @returns Carousel UI, or `null` when `slides` is empty.
+ */
 export function ProjectCarousel({ slides, title }: ProjectCarouselProps) {
   const [index, setIndex] = useState(0);
 
@@ -16,6 +28,7 @@ export function ProjectCarousel({ slides, title }: ProjectCarouselProps) {
   const slide = slides[index];
   const hasMultiple = slides.length > 1;
 
+  // Wrap around so prev on first / next on last stays in range.
   const go = (next: number) => {
     setIndex((next + slides.length) % slides.length);
   };
@@ -48,6 +61,18 @@ export function ProjectCarousel({ slides, title }: ProjectCarouselProps) {
             >
               ‹
             </button>
+            <div className="carousel__dots" role="tablist" aria-label="Slides">
+              {slides.map((_, i) => (
+                <button
+                  key={slides[i].src}
+                  type="button"
+                  className={`carousel__dot${i === index ? " carousel__dot--active" : ""}`}
+                  aria-label={`Go to slide ${i + 1}`}
+                  aria-selected={i === index}
+                  onClick={() => setIndex(i)}
+                />
+              ))}
+            </div>
             <button
               className="carousel__btn"
               type="button"
@@ -56,18 +81,6 @@ export function ProjectCarousel({ slides, title }: ProjectCarouselProps) {
             >
               ›
             </button>
-          </div>
-          <div className="carousel__dots" role="tablist" aria-label="Slides">
-            {slides.map((_, i) => (
-              <button
-                key={slides[i].src}
-                type="button"
-                className={`carousel__dot${i === index ? " carousel__dot--active" : ""}`}
-                aria-label={`Go to slide ${i + 1}`}
-                aria-selected={i === index}
-                onClick={() => setIndex(i)}
-              />
-            ))}
           </div>
         </>
       ) : null}
