@@ -1,0 +1,41 @@
+@use "../variables" as *;
+
+.footer {
+  background: var(--color-primary);
+  color: var(--color-secondary);
+  padding: 2.5rem 0;
+  text-align: center;
+}
+
+.footer__heading {
+  margin: 0 0 1.25rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 1.75rem;
+  color: var(--color-text);
+}
+
+.footer__links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.footer__link {
+  color: var(--color-chrome);
+  font-size: 1.75rem;
+  line-height: 1;
+  transition: color $transition;
+
+  &:hover {
+    color: var(--color-text-inverse);
+  }
+}
+
+.footer__copy {
+  margin: 0;
+  color: var(--color-chrome);
+  font-size: 0.95rem;
+}

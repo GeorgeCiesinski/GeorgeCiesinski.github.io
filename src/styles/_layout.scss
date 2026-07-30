@@ -1,4 +1,10 @@
-@use "tokens" as *;
+// Page shell, containers, and section layout.
+
+@use "variables" as *;
+
+section {
+  margin-bottom: 3.5rem;
+}
 
 .container {
   width: min(100% - 2rem, $container-max);
@@ -16,14 +22,9 @@
   padding-block: 2.5rem 4rem;
 }
 
-.section {
-  margin-bottom: 3.5rem;
-}
-
-.section__title {
-  font-size: 1.5rem;
+.projects__title {
   margin-bottom: 1.5rem;
-  color: $color-primary;
+  color: var(--color-primary);
 }
 
 .grid {
@@ -66,7 +67,7 @@
   display: block;
   font-size: 1.15rem;
   font-weight: 400;
-  color: $color-muted;
+  color: var(--color-text-secondary);
   margin-bottom: 2rem;
 }
 

@@ -1,0 +1,50 @@
+@use "../variables" as *;
+
+.project-card {
+  display: block;
+  color: inherit;
+  transition: transform $transition;
+
+  &:hover {
+    color: inherit;
+    transform: translateY(-2px);
+
+    .project-card__image {
+      border-color: var(--color-primary);
+    }
+  }
+}
+
+.project-card__image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border: 2px solid var(--color-secondary);
+  border-radius: $radius;
+  background: var(--color-surface-hover);
+}
+
+.project-card__title {
+  margin: 0.65rem 0 0;
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.3;
+
+  &--primary {
+    background: var(--color-primary);
+    color: var(--color-text-inverse);
+  }
+
+  &--secondary {
+    background: var(--color-secondary);
+    color: var(--color-text-inverse);
+  }
+}

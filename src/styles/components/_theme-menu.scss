@@ -1,0 +1,71 @@
+// Theme preference dropdown in the site navbar.
+
+@use "../variables" as *;
+
+.theme-menu {
+  position: relative;
+}
+
+// Match .navbar__link so it sits naturally in the nav row
+.theme-menu__toggle {
+  display: block;
+  width: 100%;
+  padding: 0.55rem 0.85rem;
+  border: 0;
+  border-radius: $radius;
+  background: transparent;
+  color: var(--color-chrome);
+  font-size: 1.05rem;
+  text-align: inherit;
+  cursor: pointer;
+  transition:
+    color $transition,
+    background $transition;
+  &:hover,
+  &[aria-expanded="true"] {
+    color: var(--color-text-inverse);
+  }
+}
+.theme-menu__list {
+  list-style: none;
+  margin: 0.35rem 0 0;
+  padding: 0.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  border-radius: $radius;
+  background: var(--color-primary);
+  border: 1px solid color-mix(in srgb, var(--color-chrome) 25%, transparent);
+  // Desktop: float under the Theme button
+  @media (min-width: 768px) {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 9rem;
+    z-index: 110;
+    box-shadow: 0 0.5rem 1rem color-mix(in srgb, #000 25%, transparent);
+  }
+}
+.theme-menu__option {
+  display: block;
+  width: 100%;
+  padding: 0.45rem 0.75rem;
+  border: 0;
+  border-radius: $radius;
+  background: transparent;
+  color: var(--color-chrome);
+  font-size: 1rem;
+  text-align: start;
+  cursor: pointer;
+  transition:
+    color $transition,
+    background $transition;
+  &:hover {
+    color: var(--color-text-inverse);
+    background: color-mix(in srgb, var(--color-chrome) 12%, transparent);
+  }
+  &--active {
+    color: var(--color-text-inverse);
+    background: color-mix(in srgb, var(--color-chrome) 18%, transparent);
+  }
+}

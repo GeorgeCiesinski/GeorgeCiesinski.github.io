@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "vercel": "vercel dev",
+    "vercel": "vercel dev --local-config ./vercel-dev.json",
     "typecheck": "tsc -b --noEmit",
     "build": "vite build",
     "preview": "vite preview",
@@ -22,6 +22,7 @@
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "react-router-dom": "^7.18.1",
+    "resend": "^6.18.1",
     "sass": "^1.101.7"
   },
   "devDependencies": {

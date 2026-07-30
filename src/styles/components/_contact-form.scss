@@ -1,0 +1,75 @@
+@use "../variables" as *;
+
+// Contact form
+.contact {
+  max-width: 28rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.contact__title {
+  margin-bottom: 1.5rem;
+}
+
+.form {
+  text-align: left;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.form__field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.form__label {
+  font-weight: 600;
+  color: var(--color-primary);
+  font-size: 0.9rem;
+}
+
+.form__input,
+.form__textarea {
+  width: 100%;
+  border: 2px solid var(--color-primary);
+  background: var(--color-surface-hover);
+  border-radius: $radius;
+  padding: 0.55rem 0.75rem;
+  color: var(--color-text);
+
+  &:focus {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 1px;
+  }
+}
+
+// Visually hidden spam trap; paired with ContactForm honeypot input.
+.form__note {
+  display: none;
+}
+
+.form__actions {
+  text-align: center;
+  margin-top: 0.25rem;
+}
+
+.form__error {
+  color: #b00020;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.success {
+  text-align: center;
+  padding: 3rem 1rem;
+
+  h1 {
+    color: var(--color-primary);
+  }
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}

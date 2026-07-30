@@ -1,5 +1,10 @@
+/**
+ * Success page shown after a successful contact form submission.
+ */
+
 import { Link } from "react-router-dom";
 
+/** Confirmation message and link back to home. */
 export function Success() {
   return (
     <div className="container success">
