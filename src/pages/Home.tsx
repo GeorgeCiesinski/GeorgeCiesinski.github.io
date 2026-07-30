@@ -10,7 +10,7 @@ import { projects } from "../data/projects";
 export function Home() {
   return (
     <div className="container">
-      <section className="section" aria-labelledby="about-heading">
+      <section className="hero" aria-labelledby="about-heading">
         <h1 className="about__title" id="about-heading">
           George Ciesinski
           <span className="about__subtitle">Software Developer</span>
@@ -38,7 +38,7 @@ export function Home() {
         id="projects"
         aria-labelledby="projects-heading"
       >
-        <h2 className="section__title" id="projects-heading">
+        <h2 className="projects__title" id="projects-heading">
           Projects
         </h2>
         <div className="grid">
@@ -49,7 +49,7 @@ export function Home() {
       </section>
 
       <section
-        className="section"
+        className="contact-me"
         id="contact"
         aria-labelledby="contact-heading"
       >
