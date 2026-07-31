@@ -15,13 +15,13 @@ const GITHUB_USERNAME = "GeorgeCiesinski";
 const WEEKS = 53;
 const BLOCK_MARGIN = 4;
 /** Space reserved for weekday labels on the left of the grid. */
-const LABEL_WIDTH = 28;
+const LABEL_WIDTH = 40;
 const MIN_BLOCK = 8;
 const MAX_BLOCK = 18;
 
 /** Contribution cell colors: empty → strongest, light and dark schemes. */
 const CALENDAR_THEME = {
-  light: ["#e6eef4", "#9bc4db", "#5a9fc4", "#3c94c7", "#1c658c"],
+  light: ["#c5d8e6", "#9bc4db", "#5a9fc4", "#3c94c7", "#1c658c"],
   dark: ["#1e3544", "#2a5470", "#3c7a9e", "#4aa3d4", "#6bb8de"],
 };
 
@@ -72,7 +72,7 @@ export function GitHubContributions() {
           theme={CALENDAR_THEME}
           blockSize={blockSize}
           blockMargin={BLOCK_MARGIN}
-          fontSize={12}
+          fontSize={18}
         />
       </div>
     </div>
