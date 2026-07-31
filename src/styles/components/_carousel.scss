@@ -10,7 +10,7 @@
   position: relative;
   overflow: hidden;
   border-radius: $radius;
-  background: var(--color-surface-hover);
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
 }
 
@@ -25,7 +25,7 @@
   margin: 0;
   padding: 0.85rem 1rem;
   background: color-mix(in srgb, var(--color-secondary) 90%, transparent);
-  color: var(--color-text-inverse);
+  color: var(--color-text);
   font-size: 0.95rem;
 
   @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {

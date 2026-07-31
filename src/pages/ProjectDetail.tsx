@@ -25,11 +25,15 @@ export function ProjectDetail() {
         <ProjectCarousel slides={project.slides} title={project.title} />
 
         <div>
-          <h1 className="about__title">
+          <h1 className="project__name">
             {project.title}
           </h1>
 
           <p>{project.description}</p>
+
+          <h2 className="project__daterange">
+            {project.daterange}
+          </h2>
 
           <div className="project-detail__meta">
             {project.tech.map((item) => (

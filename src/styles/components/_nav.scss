@@ -1,7 +1,7 @@
 @use "../variables" as *;
 
 .navbar {
-  background: var(--color-primary);
+  background: var(--color-surface);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -102,10 +102,20 @@
   border-radius: $radius;
   transition:
     color $transition,
-    background $transition;
+    background $transition,
+    font-weight $transition;
 
   &:hover,
   &--active {
-    color: var(--color-text-inverse);
+    color: var(--color-chrome);
+  }
+
+  &:hover {
+    background: color-mix(in srgb, var(--color-chrome) 15%, transparent);
+  }
+
+  &--active {
+    background: color-mix(in srgb, var(--color-chrome) 25%, transparent);
+    font-weight: 700; // resting links stay at default (400/inherited)
   }
 }

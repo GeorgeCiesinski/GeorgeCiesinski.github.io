@@ -56,7 +56,7 @@ section {
   object-fit: cover;
 }
 
-.about__title {
+.about__title, .project__name {
   font-size: clamp(1.5rem, 4vw, 2rem);
   font-weight: 700;
   margin-bottom: 0.25rem;
@@ -64,6 +64,11 @@ section {
 
 .projects__title {
   margin-bottom: 1.5rem;
+}
+
+.project__daterange {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
 }
 
 .project-detail {
