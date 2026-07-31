@@ -1,5 +1,8 @@
 /**
  * Landing page: about section, project grid, and contact form.
+ *
+ * When the URL hash is a known section (`#about`, `#projects`, `#contact`),
+ * scrolls that section into view after mount (e.g. arriving from another route).
  */
 
 import { useEffect } from "react";
@@ -8,9 +11,14 @@ import { ContactForm } from "../components/ContactForm";
 import { ProjectCard } from "../components/ProjectCard";
 import { projects } from "../data/projects";
 
+/** Allowed location hashes that map to home section element ids. */
 const HASH_SECTIONS = ["#about", "#projects", "#contact"];
 
-/** Landing page: about, project grid, and contact form. */
+/**
+ * Landing page: about, project grid, and contact form, with hash-based section scroll.
+ *
+ * @returns The home page content.
+ */
 export function Home() {
   const { hash } = useLocation();
 
@@ -28,11 +36,7 @@ export function Home() {
 
   return (
     <div className="container">
-      <section 
-        className="about" 
-        id="about" 
-        aria-labelledby="about-heading"
-      >
+      <section className="about" id="about" aria-labelledby="about-heading">
         <div className="about__container">
           <img
             className="about__photo"
@@ -40,7 +44,9 @@ export function Home() {
             alt="George Ciesinski"
           />
           <div>
-            <h2 className="section__title about__title" id="about-heading">About</h2>
+            <h2 className="section__title about__title" id="about-heading">
+              About
+            </h2>
             <p>
               I am an avid programmer who enjoys learning new things about
               programming. I am most experienced in Javascript and Python, but I

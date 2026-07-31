@@ -5,8 +5,7 @@
 .theme-menu {
   position: relative;
   border-radius: $radius;
-  transition:
-    background $transition;
+  transition: background $transition;
 
   &:hover {
     background: color-mix(in srgb, var(--color-chrome) 15%, transparent);
@@ -80,7 +79,7 @@
   &:hover {
     background: color-mix(in srgb, var(--color-chrome) 12%, transparent);
   }
-  
+
   &--active {
     background: color-mix(in srgb, var(--color-chrome) 18%, transparent);
     font-weight: 700; // resting links stay at default (400/inherited)

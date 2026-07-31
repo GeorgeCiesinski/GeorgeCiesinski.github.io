@@ -1,31 +1,49 @@
 /**
- * Site header navigation with responsive mobile menu.
+ * Site header navigation with responsive mobile menu and home-section scroll-spy.
+ *
+ * Hash links (`/#about`, `/#projects`, `/#contact`) scroll to home sections from
+ * any route. On `/`, the active link tracks scroll position under the sticky nav.
  */
+
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ThemeMenu } from "./ThemeMenu";
 
+/** Home section element ids, in document order, used for scroll-spy and nav links. */
 const SECTION_IDS = ["about", "projects", "contact"] as const;
 type SectionId = (typeof SECTION_IDS)[number];
 
-/** Sticky site header with mobile collapse and primary navigation. */
+/**
+ * Sticky site header with mobile collapse, section hash links, and active-link scroll-spy.
+ *
+ * @returns The site header element.
+ */
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [activeId, setActiveId] = useState<SectionId | null>(null);
   const { pathname } = useLocation();
   const isHome = pathname === "/";
 
+  /** Closes the mobile nav menu. */
   const close = () => setOpen(false);
 
-  useEffect(() => {
-    if (!isHome) {
-      setActiveId(null);
-      return;
-    }
+  // Only highlight section links on the home page; keep scroll-spy state otherwise.
+  const visibleActiveId = isHome ? activeId : null;
 
+  useEffect(() => {
+    if (!isHome) return;
+
+    /**
+     * Sets `activeId` from scroll position: last section whose top has crossed
+     * under the sticky nav; defaults to About at the top; forces Contact near
+     * the page bottom when that section is too short to reach the nav.
+     *
+     * @returns Nothing.
+     */
     const updateActive = () => {
       // Match sticky nav height ($nav-height: 5rem) plus a little slack.
-      const offset = parseFloat(getComputedStyle(document.documentElement).fontSize) * 5 + 8;
+      const offset =
+        parseFloat(getComputedStyle(document.documentElement).fontSize) * 5 + 8;
       let current: SectionId | null = null;
 
       for (const id of SECTION_IDS) {
@@ -42,8 +60,7 @@ export function Navbar() {
         current = "about";
       }
 
-      // Short last section: there may not be enough scroll room for its top to
-      // reach the nav. When the page bottom is in view, activate Contact.
+      // Checks if scroll is near bottom as Contact section doesn't fill viewport.
       const nearBottom =
         window.scrollY + window.innerHeight >=
         document.documentElement.scrollHeight - 80;
@@ -54,15 +71,24 @@ export function Navbar() {
       setActiveId(current);
     };
 
-    updateActive();
+    // Subscribe to scroll/resize; defer the initial read so setState is not
+    // synchronous in the effect body (react-hooks/set-state-in-effect).
+    const frame = requestAnimationFrame(updateActive);
     window.addEventListener("scroll", updateActive, { passive: true });
     window.addEventListener("resize", updateActive);
     return () => {
+      cancelAnimationFrame(frame);
       window.removeEventListener("scroll", updateActive);
       window.removeEventListener("resize", updateActive);
     };
   }, [isHome]);
 
+  /**
+   * Closes the mobile menu and marks the clicked section link active immediately.
+   *
+   * @param id - Home section id matching the clicked hash link.
+   * @returns Nothing.
+   */
   const handleNavClick = (id: SectionId) => {
     close();
     setActiveId(id);
@@ -97,7 +123,7 @@ export function Navbar() {
           {/* Hash links so in-page section anchors work from any route. */}
           <li>
             <a
-              className={`navbar__link${activeId === "about" ? " navbar__link--active" : ""}`}
+              className={`navbar__link${visibleActiveId === "about" ? " navbar__link--active" : ""}`}
               href="/#about"
               onClick={() => handleNavClick("about")}
             >
@@ -106,7 +132,7 @@ export function Navbar() {
           </li>
           <li>
             <a
-              className={`navbar__link${activeId === "projects" ? " navbar__link--active" : ""}`}
+              className={`navbar__link${visibleActiveId === "projects" ? " navbar__link--active" : ""}`}
               href="/#projects"
               onClick={() => handleNavClick("projects")}
             >
@@ -115,11 +141,11 @@ export function Navbar() {
           </li>
           <li>
             <a
-              className={`navbar__link${activeId === "contact" ? " navbar__link--active" : ""}`}
+              className={`navbar__link${visibleActiveId === "contact" ? " navbar__link--active" : ""}`}
               href="/#contact"
               onClick={() => handleNavClick("contact")}
             >
-              Contact Me
+              Contact
             </a>
           </li>
           <li>
