@@ -53,9 +53,9 @@ export function Home() {
               programming. I am most experienced in Javascript and Python, but I
               also have experience with C#, HTML/CSS, SASS and SQL.
             </p>
+            <GitHubContributions />
           </div>
         </div>
-        <GitHubContributions />
       </section>
 
       <section
