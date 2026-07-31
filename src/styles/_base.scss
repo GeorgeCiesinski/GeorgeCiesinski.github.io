@@ -7,7 +7,7 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   color: var(--color-text);
-  background: var(--color-surface);
+  background: var(--color-surface-muted);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -24,31 +24,6 @@ a {
   &:hover {
     color: var(--color-secondary);
   }
-}
-
-h1,
-h2,
-h3,
-h4 {
-  font-family: $font-display;
-  line-height: 1.2;
-  margin: 0 0 0.75rem;
-}
-
-h1 {
-  font-size: clamp(2rem, 4vw, 3rem);
-}
-
-h2 {
-  font-size: 1.5rem;
-}
-
-h3 {
-  font-size: 1.15rem;
-}
-
-p {
-  margin: 0 0 1rem;
 }
 
 button,
@@ -71,7 +46,7 @@ textarea {
     color $transition;
 
   &--primary {
-    background: var(--color-surface);
+    background: var(--color-surface-muted);
     color: var(--color-primary);
 
     &:hover {

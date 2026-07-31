@@ -1,0 +1,21 @@
+// GitHub contribution calendar under the About bio.
+
+.github-contributions {
+  width: 100%;
+  margin-top: 2rem;
+  color: var(--color-text);
+}
+
+.github-contributions__title {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.github-contributions__scroll {
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+  color: var(--color-text-secondary);
+}

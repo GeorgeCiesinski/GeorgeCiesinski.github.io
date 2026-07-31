@@ -1,36 +1,61 @@
 /**
  * Landing page: about section, project grid, and contact form.
+ *
+ * When the URL hash is a known section (`#about`, `#projects`, `#contact`),
+ * scrolls that section into view after mount (e.g. arriving from another route).
  */
 
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { ContactForm } from "../components/ContactForm";
+import { GitHubContributions } from "../components/GitHubContributions";
 import { ProjectCard } from "../components/ProjectCard";
 import { projects } from "../data/projects";
 
-/** Landing page: about, project grid, and contact form. */
+/** Allowed location hashes that map to home section element ids. */
+const HASH_SECTIONS = ["#about", "#projects", "#contact"];
+
+/**
+ * Landing page: about, project grid, and contact form, with hash-based section scroll.
+ *
+ * @returns The home page content.
+ */
 export function Home() {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (!HASH_SECTIONS.includes(hash)) return;
+
+    const id = hash.slice(1);
+    // Defer until after paint so section elements are in the DOM.
+    const frame = requestAnimationFrame(() => {
+      document.getElementById(id)?.scrollIntoView();
+    });
+
+    return () => cancelAnimationFrame(frame);
+  }, [hash]);
+
   return (
     <div className="container">
-      <section className="hero" aria-labelledby="about-heading">
-        <h1 className="about__title" id="about-heading">
-          George Ciesinski
-          <span className="about__subtitle">Software Developer</span>
-        </h1>
-        <div className="about">
+      <section className="about" id="about" aria-labelledby="about-heading">
+        <div className="about__container">
           <img
             className="about__photo"
             src="/img/front-page/me.png"
             alt="George Ciesinski"
           />
           <div>
-            <h2>About</h2>
+            <h2 className="section__title about__title" id="about-heading">
+              About
+            </h2>
             <p>
               I am an avid programmer who enjoys learning new things about
               programming. I am most experienced in Javascript and Python, but I
               also have experience with C#, HTML/CSS, SASS and SQL.
             </p>
-            <p>I enjoy building websites, bots, desktop apps.</p>
           </div>
         </div>
+        <GitHubContributions />
       </section>
 
       <section
@@ -38,7 +63,7 @@ export function Home() {
         id="projects"
         aria-labelledby="projects-heading"
       >
-        <h2 className="projects__title" id="projects-heading">
+        <h2 className="section__title projects__title" id="projects-heading">
           Projects
         </h2>
         <div className="grid">
@@ -54,7 +79,7 @@ export function Home() {
         aria-labelledby="contact-heading"
       >
         <div className="contact">
-          <h2 className="contact__title" id="contact-heading">
+          <h2 className="section__title contact__title" id="contact-heading">
             Contact Me
           </h2>
           <ContactForm />

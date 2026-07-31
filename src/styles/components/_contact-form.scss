@@ -1,16 +1,6 @@
 @use "../variables" as *;
 
 // Contact form
-.contact {
-  max-width: 28rem;
-  margin-inline: auto;
-  text-align: center;
-}
-
-.contact__title {
-  margin-bottom: 1.5rem;
-}
-
 .form {
   text-align: left;
   display: grid;
@@ -32,14 +22,14 @@
 .form__textarea {
   width: 100%;
   border: 2px solid var(--color-primary);
-  background: var(--color-surface-hover);
+  background: var(--color-surface-secondary);
   border-radius: $radius;
   padding: 0.55rem 0.75rem;
   color: var(--color-text);
 
   &:focus {
     outline: 2px solid var(--color-secondary);
-    outline-offset: 1px;
+    outline-offset: -2px;
   }
 }
 

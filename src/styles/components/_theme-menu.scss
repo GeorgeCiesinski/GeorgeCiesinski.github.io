@@ -4,6 +4,12 @@
 
 .theme-menu {
   position: relative;
+  border-radius: $radius;
+  transition: background $transition;
+
+  &:hover {
+    background: color-mix(in srgb, var(--color-chrome) 15%, transparent);
+  }
 }
 
 // Match .navbar__link so it sits naturally in the nav row
@@ -21,11 +27,13 @@
   transition:
     color $transition,
     background $transition;
+
   &:hover,
   &[aria-expanded="true"] {
     color: var(--color-text-inverse);
   }
 }
+
 .theme-menu__list {
   list-style: none;
   margin: 0.35rem 0 0;
@@ -34,8 +42,9 @@
   flex-direction: column;
   gap: 0.15rem;
   border-radius: $radius;
-  background: var(--color-primary);
-  border: 1px solid color-mix(in srgb, var(--color-chrome) 25%, transparent);
+  background: var(--color-surface);
+  border: 1px solid color-mix(in srgb, var(--color-primary) 25%, transparent);
+
   // Desktop: float under the Theme button
   @media (min-width: 768px) {
     position: absolute;
@@ -59,13 +68,20 @@
   cursor: pointer;
   transition:
     color $transition,
-    background $transition;
+    background $transition,
+    font-weight $transition;
+
+  &:hover,
+  &--active {
+    color: var(--color-chrome);
+  }
+
   &:hover {
-    color: var(--color-text-inverse);
     background: color-mix(in srgb, var(--color-chrome) 12%, transparent);
   }
+
   &--active {
-    color: var(--color-text-inverse);
     background: color-mix(in srgb, var(--color-chrome) 18%, transparent);
+    font-weight: 700; // resting links stay at default (400/inherited)
   }
 }

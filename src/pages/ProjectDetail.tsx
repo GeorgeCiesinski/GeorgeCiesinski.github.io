@@ -21,21 +21,15 @@ export function ProjectDetail() {
         ← Back to projects
       </Link>
 
-      <h1 className="about__title">
-        <span
-          className="badge badge--primary"
-          style={{ marginRight: "0.65rem" }}
-        >
-          {project.category}
-        </span>
-        {project.title}
-      </h1>
-
       <div className="project-detail">
         <ProjectCarousel slides={project.slides} title={project.title} />
 
         <div>
+          <h1 className="project__name">{project.title}</h1>
+
           <p>{project.description}</p>
+
+          <h2 className="project__daterange">{project.daterange}</h2>
 
           <div className="project-detail__meta">
             {project.tech.map((item) => (
@@ -44,6 +38,13 @@ export function ProjectDetail() {
               </span>
             ))}
           </div>
+
+          <span
+            className="badge badge--primary"
+            style={{ marginRight: "0.65rem" }}
+          >
+            {project.category}
+          </span>
 
           <div className="project-detail__actions">
             {project.github ? (
