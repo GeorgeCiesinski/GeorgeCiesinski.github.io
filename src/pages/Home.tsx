@@ -2,12 +2,30 @@
  * Landing page: about section, project grid, and contact form.
  */
 
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { ContactForm } from "../components/ContactForm";
 import { ProjectCard } from "../components/ProjectCard";
 import { projects } from "../data/projects";
 
+const HASH_SECTIONS = ["#about", "#projects", "#contact"];
+
 /** Landing page: about, project grid, and contact form. */
 export function Home() {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (!HASH_SECTIONS.includes(hash)) return;
+
+    const id = hash.slice(1);
+    // Defer until after paint so section elements are in the DOM.
+    const frame = requestAnimationFrame(() => {
+      document.getElementById(id)?.scrollIntoView();
+    });
+
+    return () => cancelAnimationFrame(frame);
+  }, [hash]);
+
   return (
     <div className="container">
       <section 

@@ -2,6 +2,15 @@
 
 @use "variables" as *;
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: $nav-height;
+
+  @media (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
+}
+
 section {
   margin-bottom: 3.5rem;
 }
