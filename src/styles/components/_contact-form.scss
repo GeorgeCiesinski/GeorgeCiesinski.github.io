@@ -1,16 +1,6 @@
 @use "../variables" as *;
 
 // Contact form
-.contact {
-  max-width: 28rem;
-  margin-inline: auto;
-  text-align: center;
-}
-
-.contact__title {
-  margin-bottom: 1.5rem;
-}
-
 .form {
   text-align: left;
   display: grid;

@@ -10,19 +10,19 @@ import { projects } from "../data/projects";
 export function Home() {
   return (
     <div className="container">
-      <section className="hero" aria-labelledby="about-heading">
-        <h1 className="about__title" id="about-heading">
-          George Ciesinski
-          <span className="about__subtitle">Software Developer</span>
-        </h1>
-        <div className="about">
+      <section 
+        className="about" 
+        id="about" 
+        aria-labelledby="about-heading"
+      >
+        <div className="about__container">
           <img
             className="about__photo"
             src="/img/front-page/me.png"
             alt="George Ciesinski"
           />
           <div>
-            <h2>About</h2>
+            <h2 className="section__title about__title" id="about-heading">About</h2>
             <p>
               I am an avid programmer who enjoys learning new things about
               programming. I am most experienced in Javascript and Python, but I
@@ -38,7 +38,7 @@ export function Home() {
         id="projects"
         aria-labelledby="projects-heading"
       >
-        <h2 className="projects__title" id="projects-heading">
+        <h2 className="section__title projects__title" id="projects-heading">
           Projects
         </h2>
         <div className="grid">
@@ -54,7 +54,7 @@ export function Home() {
         aria-labelledby="contact-heading"
       >
         <div className="contact">
-          <h2 className="contact__title" id="contact-heading">
+          <h2 className="section__title contact__title" id="contact-heading">
             Contact Me
           </h2>
           <ContactForm />

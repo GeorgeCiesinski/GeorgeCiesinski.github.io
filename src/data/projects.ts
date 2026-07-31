@@ -132,34 +132,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "admin-dashboard",
-    title: "Admin Dashboard",
-    category: "Front-end",
-    description:
-      "An admin UI with side and top navigation, live search filtering, and a responsive layout built with CSS grid and flexbox.",
-    tech: ["HTML", "CSS", "SASS", "JavaScript"],
-    thumbnail: "/img/front-page/admin-dashboard-thumb.png",
-    github: "https://github.com/GeorgeCiesinski/admin-dashboard",
-    demo: "https://georgeciesinski.github.io/admin-dashboard/",
-    slides: [
-      {
-        src: "/img/admin-dashboard/Dashboard.png",
-        caption:
-          "Side-menu navbar and top menu with easily accessible admin utilities",
-      },
-      {
-        src: "/img/admin-dashboard/search-bar.gif",
-        caption:
-          "Searchbar hides pages that do not match the search terms with every key stroke",
-      },
-      {
-        src: "/img/admin-dashboard/responsive.gif",
-        caption:
-          "With a combination of grid and flexbox, page elements readjust to fit every screen size",
-      },
-    ],
-  },
-  {
     slug: "pixel-sketchpad",
     title: "Pixel Sketchpad",
     category: "Front-end",
@@ -229,7 +201,7 @@ export const projects: Project[] = [
   {
     slug: "social-media",
     title: "Social Media Analysis",
-    category: "Data Analysis",
+    category: "Data Analysis Script",
     description:
       "Scrapes Reddit posts, stores data in PostgreSQL, and plots sentiment analysis charts including timelines, pie charts, and upvote distributions.",
     tech: [
@@ -276,7 +248,7 @@ export const projects: Project[] = [
   {
     slug: "text-script",
     title: "Text-Script",
-    category: "App",
+    category: "Desktop App",
     description:
       "A desktop expansion tool that pastes textblock templates from keyboard shortcuts into any text field \u2014 built to speed up customer email responses.",
     tech: ["Python", "Pynput", "Pyperclip"],
@@ -298,7 +270,7 @@ export const projects: Project[] = [
   {
     slug: "image-filters",
     title: "Image Filters",
-    category: "App",
+    category: "Desktop App",
     description:
       "A desktop image filter app using OpenCV and Tkinter, with sliders for adjustments, resizable preview, save, and logging.",
     tech: ["Python", "OpenCV", "TKinter"],

@@ -15,8 +15,11 @@ export function Navbar() {
     <header className="navbar">
       <div className="container navbar__inner">
         <Link className="navbar__brand" to="/" onClick={close}>
-          <img src="/img/logo.svg" alt="" />
-          George Ciesinski
+          <img src="/img/favicon.svg" alt="" />
+          <div className="navbar__brand-text">
+            <span className="navbar__title"> George Ciesinski</span>
+            <span className="navbar__subtitle">Software Developer</span>
+          </div>
         </Link>
 
         <button

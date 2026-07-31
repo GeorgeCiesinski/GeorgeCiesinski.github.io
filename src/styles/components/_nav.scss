@@ -20,6 +20,19 @@
   align-items: center;
   gap: 0.65rem;
   color: var(--color-chrome);
+
+  img {
+    height: 2.5rem;
+    width: auto;
+  }
+}
+
+.navbar__brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar__title {
   font-size: 1.35rem;
   font-weight: 900;
   text-transform: uppercase;
@@ -28,11 +41,10 @@
   &:hover {
     color: var(--color-text-inverse);
   }
+}
 
-  img {
-    height: 2.5rem;
-    width: auto;
-  }
+.navbar__subtitle {
+  font-size: 1rem;
 }
 
 .navbar__toggle {
