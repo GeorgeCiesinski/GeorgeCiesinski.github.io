@@ -29,7 +29,7 @@ export function ProjectDetail() {
 
           <p>{project.description}</p>
 
-          <h2 className="project__daterange">{project.daterange}</h2>
+          <h2 className="project__daterange">{project.datestart} — {project.dateend}</h2>
 
           <div className="project-detail__meta">
             {project.tech.map((item) => (
