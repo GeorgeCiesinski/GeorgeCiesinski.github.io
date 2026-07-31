@@ -8,6 +8,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { ContactForm } from "../components/ContactForm";
+import { GitHubContributions } from "../components/GitHubContributions";
 import { ProjectCard } from "../components/ProjectCard";
 import { projects } from "../data/projects";
 
@@ -52,9 +53,9 @@ export function Home() {
               programming. I am most experienced in Javascript and Python, but I
               also have experience with C#, HTML/CSS, SASS and SQL.
             </p>
-            <p>I enjoy building websites, bots, desktop apps.</p>
           </div>
         </div>
+        <GitHubContributions />
       </section>
 
       <section

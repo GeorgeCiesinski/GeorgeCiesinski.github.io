@@ -77,10 +77,10 @@
     position: absolute;
     inset-inline: 0;
     top: $nav-height;
-    background: var(--color-primary);
+    background: var(--color-surface);
     padding: 1rem 1rem 1.25rem;
     border-top: 1px solid
-      color-mix(in srgb, var(--color-chrome) 25%, transparent);
+      color-mix(in srgb, var(--color-surface-muted) 50%, transparent);
   }
 
   @media (min-width: 768px) {
