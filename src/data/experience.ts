@@ -1,20 +1,34 @@
+/**
+ * Work and open-source experience catalogs for the home Experience section.
+ */
+
+/** Paid / employment role shown in the Work timeline. */
 export interface WorkExperience {
+  /** Left-rail label (e.g. year or "Present"). */
   year: string;
   employer: string;
+  /** Optional employer logo path under `/public`. */
   logo?: string;
   title: string;
   datestart: string;
   dateend: string;
+  /** Bullet achievements for the right column. */
   achievements: string[];
 }
 
+/** Open-source contribution shown in the Open Source timeline. */
 export interface OpenSourceExperience {
+  /** Left-rail label (e.g. year). */
   year: string;
+  /** Project name (middle-column heading). */
   project: string;
+  /** External project / repository URL; project name is the link label. */
   url: string;
+  /** Bullet achievements for the right column. */
   achievements: string[];
 }
 
+/** Work roles for the Experience section, newest first. */
 export const workExperience: WorkExperience[] = [
   {
     year: "2023",
@@ -66,6 +80,7 @@ export const workExperience: WorkExperience[] = [
   },
 ];
 
+/** Open-source entries for the Experience section, newest first. */
 export const openSourceExperience: OpenSourceExperience[] = [
   {
     year: "2023",
