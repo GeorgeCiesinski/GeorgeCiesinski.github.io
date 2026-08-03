@@ -1,0 +1,149 @@
+@use "../variables" as *;
+@use "../mixins/breakpoints" as *;
+
+.experience__title {
+  margin-bottom: 1.5rem;
+}
+
+.experience__subtitle {
+  margin: 2rem 0 1rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.experience-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-left: 0.25rem;
+
+  // Vertical line through the year column
+  &::before {
+    content: "";
+    position: absolute;
+    left: 2rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-border);
+  }
+
+  @include breakpoint(md) {
+    &::before {
+      left: 2.5rem;
+    }
+  }
+}
+
+.experience-item {
+  display: grid;
+  grid-template-columns: 3.25rem 1fr;
+  grid-template-areas:
+    "year middle"
+    "year list";
+  gap: 1rem 1.5rem;
+  align-items: start;
+  color: var(--color-text-secondary);
+  transition: color $transition;
+
+  @include breakpoint(md) {
+    grid-template-columns: 4.5rem 1fr 1.4fr;
+    grid-template-areas: none;
+  }
+}
+
+.experience-item__year {
+  position: relative;
+  z-index: 1;
+  grid-area: year;
+  justify-self: center;
+  padding: 0.15rem 0;
+  font-weight: 600;
+  font-size: 0.95rem;
+  // Masks the rail behind the label
+  background: var(--color-surface-muted);
+  transition:
+    color $transition,
+    font-weight $transition;
+
+  @include breakpoint(md) {
+    grid-area: auto;
+  }
+}
+
+.experience-item__middle {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  grid-area: middle;
+
+  @include breakpoint(md) {
+    grid-area: auto;
+  }
+}
+
+.experience-item__logo {
+  width: 2.25rem;
+  height: 2.25rem;
+  object-fit: contain;
+  border-radius: $radius;
+  flex-shrink: 0;
+}
+
+.experience-item__title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: inherit;
+}
+
+.experience-item__employer {
+  margin: 0.15rem 0 0;
+  font-size: 0.95rem;
+}
+
+.experience-item__dates {
+  margin: 0.15rem 0 0;
+  font-size: 0.85rem;
+}
+
+.experience-item__project {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.experience-item__list {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  grid-area: list;
+
+  li + li {
+    margin-top: 0.4rem;
+  }
+
+  @include breakpoint(md) {
+    grid-area: auto;
+  }
+}
+
+.experience-item--active {
+  color: var(--color-text);
+
+  .experience-item__year,
+  .experience-item__title,
+  .experience-item__employer,
+  .experience-item__project {
+    color: var(--color-text);
+    font-weight: 700;
+  }
+}

@@ -1,4 +1,5 @@
 @use "../variables" as *;
+@use "../mixins/breakpoints" as *;
 
 .navbar {
   background: var(--color-surface);
@@ -59,7 +60,7 @@
   color: var(--color-chrome);
   cursor: pointer;
 
-  @media (min-width: 768px) {
+  @include breakpoint(md) {
     display: none;
   }
 }
@@ -83,7 +84,7 @@
       color-mix(in srgb, var(--color-surface-muted) 50%, transparent);
   }
 
-  @media (min-width: 768px) {
+  @include breakpoint(md) {
     display: flex;
     flex-direction: row;
     align-items: center;

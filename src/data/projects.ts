@@ -15,7 +15,8 @@ export interface Project {
   slug: string;
   title: string;
   category: string;
-  daterange: string;
+  datestart: string;
+  dateend: string;
   description: string;
   tech: string[];
   /** Home-grid thumbnail; distinct from detail `slides`. */
@@ -28,10 +29,55 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: "galesage",
+    title: "GaleSage",
+    category: "Full-Stack Web Application",
+    datestart: "2026 June",
+    dateend: "Present",
+    description:
+      "A weather forecast web app for comparing conditions across locations, with a built-in AI advisor that answers questions from the forecast data.",
+    tech: [
+      "TypeScript",
+      "React.js",
+      "Vite",
+      "Vitest",
+      "Vercel",
+      "Visual Crossing API",
+      "Nominatim API",
+    ],
+    thumbnail: "/img/front-page/galesage-thumb.png",
+    github: "https://github.com/GeorgeCiesinski/galesage",
+    demo: "https://www.galesage.app/",
+    slides: [
+      {
+        src: "/img/galesage/search-location.gif",
+        caption: "Find your desired location using Nominatim's geocode API.",
+      },
+      {
+        src: "/img/galesage/ask-advisor.gif",
+        caption:
+          "Ask the advisor questions about the next 5 days, or the selected day.",
+      },
+      {
+        src: "/img/galesage/daily-forecast.gif",
+        caption: "See up to 14 days of forecast data.",
+      },
+      {
+        src: "/img/galesage/hourly-forecast.gif",
+        caption: "See the hourly forecast for each day.",
+      },
+      {
+        src: "/img/galesage/three-locations.gif",
+        caption: "Compare forecast data from up to three locations.",
+      },
+    ],
+  },
+  {
     slug: "poke-guesser",
     title: "Poke-guesser Bot",
     category: "Back-end",
-    daterange: "2021 June - Present",
+    datestart: "2021 June",
+    dateend: "Present",
     description:
       "A Discord bot game where players guess Pok\u00e9mon from images. Tracks scores on a leaderboard and supports multilingual reveals via PokeAPI.",
     tech: ["JavaScript", "discord.js", "pokeapi.co", "PostgreSQL", "Docker"],
@@ -63,7 +109,8 @@ export const projects: Project[] = [
     slug: "todo-web-app",
     title: "Todo Web App",
     category: "Front-end",
-    daterange: "2022 December - 2023 March",
+    datestart: "2022 December",
+    dateend: "2023 March",
     description:
       "A Webpack-powered todo app with multiple lists, optional checklists, theme switching, and a responsive side menu that collapses to a hamburger on small screens.",
     tech: ["HTML", "CSS", "SASS", "JavaScript", "Webpack"],
@@ -100,7 +147,8 @@ export const projects: Project[] = [
     slug: "library-app",
     title: "Library App",
     category: "Front-end",
-    daterange: "2022 November - 2022 December",
+    datestart: "2022 November",
+    dateend: "2022 December",
     description:
       "Track books you are reading or have read. Add titles by ISBN for automatic cover lookup, toggle read status, and switch light/dark mode.",
     tech: ["HTML", "CSS", "SASS", "JavaScript"],
@@ -139,7 +187,8 @@ export const projects: Project[] = [
     slug: "pixel-sketchpad",
     title: "Pixel Sketchpad",
     category: "Front-end",
-    daterange: "2022 September - 2022 November",
+    datestart: "2022 September",
+    dateend: "2022 November",
     description:
       "A pixel drawing tool with color selection, grid size controls, and a background eraser that preserves drawings when the canvas color changes.",
     tech: ["HTML", "CSS", "SASS", "JavaScript"],
@@ -163,7 +212,8 @@ export const projects: Project[] = [
     slug: "flask-api",
     title: "Flask RESTful API",
     category: "Back-end",
-    daterange: "2021 August - 2023 January",
+    datestart: "2021 August",
+    dateend: "2023 January",
     description:
       "A Flask-RESTful API for registering users, authenticating, and creating/retrieving/deleting stores and items, backed by SQLite and deployable on Heroku.",
     tech: ["Python", "Flask", "Flask-RESTful", "SQLite", "Heroku"],
@@ -208,7 +258,8 @@ export const projects: Project[] = [
     slug: "social-media",
     title: "Social Media Analysis",
     category: "Data Analysis Script",
-    daterange: "2020 November - 2021 August",
+    datestart: "2020 November",
+    dateend: "2021 August",
     description:
       "Scrapes Reddit posts, stores data in PostgreSQL, and plots sentiment analysis charts including timelines, pie charts, and upvote distributions.",
     tech: [
@@ -256,7 +307,8 @@ export const projects: Project[] = [
     slug: "text-script",
     title: "Text-Script",
     category: "Desktop App",
-    daterange: "2020 January - 2020 June",
+    datestart: "2020 January",
+    dateend: "2020 June",
     description:
       "A desktop expansion tool that pastes textblock templates from keyboard shortcuts into any text field \u2014 built to speed up customer email responses.",
     tech: ["Python", "Pynput", "Pyperclip"],
@@ -279,7 +331,8 @@ export const projects: Project[] = [
     slug: "image-filters",
     title: "Image Filters",
     category: "Desktop App",
-    daterange: "2019 November - 2020 February",
+    datestart: "2019 November",
+    dateend: "2020 February",
     description:
       "A desktop image filter app using OpenCV and Tkinter, with sliders for adjustments, resizable preview, save, and logging.",
     tech: ["Python", "OpenCV", "TKinter"],
