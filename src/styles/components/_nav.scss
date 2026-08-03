@@ -21,10 +21,16 @@
   align-items: center;
   gap: 0.65rem;
   color: var(--color-chrome);
+  transition: transform 150ms;
 
   img {
-    height: 2.5rem;
+    height: 2.8rem;
     width: auto;
+  }
+
+  &:hover {
+    color: var(--color-chrome);
+    transform: translateY(-0.1rem);
   }
 }
 
@@ -38,10 +44,6 @@
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.02em;
-
-  &:hover {
-    color: var(--color-text-inverse);
-  }
 }
 
 .navbar__subtitle {
