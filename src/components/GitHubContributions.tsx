@@ -41,7 +41,7 @@ function blockSizeForWidth(containerWidth: number): number {
 
 /**
  * Picks a font size to fit mobile and desktop width.
- * 
+ *
  * @param blockSize - Width of the scroll/wrapper element in pixels.
  * @returns Clamped font size in pixels.
  */

@@ -36,15 +36,22 @@ export const projects: Project[] = [
     dateend: "Present",
     description:
       "A weather forecast web app for comparing conditions across locations, with a built-in AI advisor that answers questions from the forecast data.",
-    tech: ["TypeScript", "React.js", "Vite", "Vitest", "Vercel", "Visual Crossing API", "Nominatim API"],
+    tech: [
+      "TypeScript",
+      "React.js",
+      "Vite",
+      "Vitest",
+      "Vercel",
+      "Visual Crossing API",
+      "Nominatim API",
+    ],
     thumbnail: "/img/front-page/galesage-thumb.png",
     github: "https://github.com/GeorgeCiesinski/galesage",
     demo: "https://www.galesage.app/",
     slides: [
       {
         src: "/img/galesage/search-location.gif",
-        caption:
-          "Find your desired location using Nominatim's geocode API.",
+        caption: "Find your desired location using Nominatim's geocode API.",
       },
       {
         src: "/img/galesage/ask-advisor.gif",
@@ -57,13 +64,11 @@ export const projects: Project[] = [
       },
       {
         src: "/img/galesage/hourly-forecast.gif",
-        caption:
-          "See the hourly forecast for each day.",
+        caption: "See the hourly forecast for each day.",
       },
       {
         src: "/img/galesage/three-locations.gif",
-        caption:
-          "Compare forecast data from up to three locations.",
+        caption: "Compare forecast data from up to three locations.",
       },
     ],
   },
