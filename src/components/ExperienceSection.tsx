@@ -15,6 +15,12 @@ export function ExperienceSection() {
   const [activeId, setActiveId] = useState("work-0");
 
   useEffect(() => {
+    /**
+     * Sets `activeId` to the experience row whose vertical center is closest
+     * to the viewport midpoint.
+     *
+     * @returns Nothing.
+     */
     const updateActive = () => {
       const items = document.querySelectorAll<HTMLElement>(
         ".experience [data-experience-id]",

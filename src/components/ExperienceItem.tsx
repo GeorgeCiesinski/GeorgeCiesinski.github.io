@@ -1,5 +1,5 @@
 /**
- * Timeline row component for work & open-source contributions.
+ * Timeline row components for work and open-source experience entries.
  */
 
 import type { OpenSourceExperience, WorkExperience } from "../data/experience";
@@ -16,10 +16,25 @@ interface OpenSourceExperienceItemProps {
   isActive: boolean;
 }
 
+/**
+ * Builds the BEM class list for an experience row, including the active modifier.
+ *
+ * @param isActive - Whether this row is the scroll-spy focus.
+ * @returns Class string for the row `<article>`.
+ */
 function itemClassName(isActive: boolean): string {
   return `experience-item${isActive ? " experience-item--active" : ""}`;
 }
 
+/**
+ * Timeline row for a paid/work experience entry.
+ *
+ * @param props - Component props.
+ * @param props.id - Stable row id used for keys and scroll-spy (`data-experience-id`).
+ * @param props.experience - Work experience data to display.
+ * @param props.isActive - Whether this row is highlighted by the scroll-spy.
+ * @returns One work experience timeline row.
+ */
 export function WorkExperienceItem({
   id,
   experience,
@@ -57,6 +72,15 @@ export function WorkExperienceItem({
   );
 }
 
+/**
+ * Timeline row for an open-source contribution (linked project name).
+ *
+ * @param props - Component props.
+ * @param props.id - Stable row id used for keys and scroll-spy (`data-experience-id`).
+ * @param props.experience - Open-source experience data to display.
+ * @param props.isActive - Whether this row is highlighted by the scroll-spy.
+ * @returns One open-source experience timeline row.
+ */
 export function OpenSourceExperienceItem({
   id,
   experience,
