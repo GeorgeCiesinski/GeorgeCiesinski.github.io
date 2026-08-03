@@ -1,7 +1,7 @@
 /**
  * Landing page: about section, project grid, and contact form.
  *
- * When the URL hash is a known section (`#about`, `#projects`, `#contact`),
+ * When the URL hash is a known section (`#about`, `#projects`, '#experience`, #contact`),
  * scrolls that section into view after mount (e.g. arriving from another route).
  */
 
@@ -10,10 +10,11 @@ import { useLocation } from "react-router-dom";
 import { ContactForm } from "../components/ContactForm";
 import { GitHubContributions } from "../components/GitHubContributions";
 import { ProjectCard } from "../components/ProjectCard";
+import { ExperienceSection } from "../components/ExperienceSection";
 import { projects } from "../data/projects";
 
 /** Allowed location hashes that map to home section element ids. */
-const HASH_SECTIONS = ["#about", "#projects", "#contact"];
+const HASH_SECTIONS = ["#about", "#projects", "#experience", "#contact"];
 
 /**
  * Landing page: about, project grid, and contact form, with hash-based section scroll.
@@ -53,9 +54,9 @@ export function Home() {
               programming. I am most experienced in Javascript and Python, but I
               also have experience with C#, HTML/CSS, SASS and SQL.
             </p>
+            <GitHubContributions />
           </div>
         </div>
-        <GitHubContributions />
       </section>
 
       <section
@@ -71,6 +72,20 @@ export function Home() {
             <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
+      </section>
+
+      <section
+        className="experience"
+        id="experience"
+        aria-labelledby="experience-heading"
+      >
+        <h2
+          className="section__title experience__title"
+          id="experience-heading"
+        >
+          Experience
+        </h2>
+        <ExperienceSection />
       </section>
 
       <section

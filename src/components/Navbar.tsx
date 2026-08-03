@@ -10,7 +10,7 @@ import { Link, useLocation } from "react-router-dom";
 import { ThemeMenu } from "./ThemeMenu";
 
 /** Home section element ids, in document order, used for scroll-spy and nav links. */
-const SECTION_IDS = ["about", "projects", "contact"] as const;
+const SECTION_IDS = ["about", "projects", "experience", "contact"] as const;
 type SectionId = (typeof SECTION_IDS)[number];
 
 /**
@@ -137,6 +137,15 @@ export function Navbar() {
               onClick={() => handleNavClick("projects")}
             >
               Projects
+            </a>
+          </li>
+          <li>
+            <a
+              className={`navbar__link${visibleActiveId === "experience" ? " navbar__link--active" : ""}`}
+              href="/#experience"
+              onClick={() => handleNavClick("experience")}
+            >
+              Experience
             </a>
           </li>
           <li>
