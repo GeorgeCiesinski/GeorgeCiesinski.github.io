@@ -1,6 +1,7 @@
 // Theme preference dropdown in the site navbar.
 
 @use "../variables" as *;
+@use "../mixins/breakpoints" as *;
 
 .theme-menu {
   position: relative;
@@ -46,7 +47,7 @@
   border: 1px solid color-mix(in srgb, var(--color-primary) 25%, transparent);
 
   // Desktop: float under the Theme button
-  @media (min-width: 768px) {
+  @include breakpoint(md) {
     position: absolute;
     top: 100%;
     right: 0;

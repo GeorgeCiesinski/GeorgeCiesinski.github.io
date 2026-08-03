@@ -1,7 +1,9 @@
 // Page shell, containers, and section layout.
 // Smooth hash scrolling and sticky-nav offset live on `html` below.
+// Width breakpoints via mixin; prefers-reduced-motion stays raw @media.
 
 @use "variables" as *;
+@use "mixins/breakpoints" as *;
 
 html {
   scroll-behavior: smooth;
@@ -37,11 +39,11 @@ section {
   gap: 1.5rem;
   grid-template-columns: 1fr;
 
-  @media (min-width: 640px) {
+  @include breakpoint(sm) {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (min-width: 1024px) {
+  @include breakpoint(lg) {
     grid-template-columns: repeat(3, 1fr);
   }
 }
@@ -55,7 +57,7 @@ section {
   gap: 2rem;
   align-items: start;
 
-  @media (min-width: 900px) {
+  @include breakpoint(md) {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -86,7 +88,7 @@ section {
   display: grid;
   gap: 2rem;
 
-  @media (min-width: 900px) {
+  @include breakpoint(md) {
     grid-template-columns: 1.2fr 1fr;
     align-items: start;
   }

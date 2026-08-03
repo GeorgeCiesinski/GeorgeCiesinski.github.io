@@ -3,8 +3,11 @@
  *
  * Base styles = mobile. Use @include breakpoint(sm|md|lg) for larger viewports.
  *
- * Usage:
- *   @use '../mixins/breakpoints' as *;
+ * Usage (from styles/):
+ *   @use "mixins/breakpoints" as *;
+ *
+ * Usage (from styles/components/):
+ *   @use "../mixins/breakpoints" as *;
  *
  *   .example {
  *     // mobile styles
