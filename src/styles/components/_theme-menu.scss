@@ -107,7 +107,6 @@
   position: static;
   width: 100%;
   list-style: none;
-  // margin: 1rem 0 0;
   padding: 0.35rem;
   display: flex;
   flex-direction: column;
@@ -119,7 +118,7 @@
   // Desktop: float under the Theme button
   @include breakpoint(md) {
     position: absolute;
-    top: 100%;
+    top: calc(100% + 0.5rem);
     right: 0;
     min-width: 9rem;
     z-index: 110;
