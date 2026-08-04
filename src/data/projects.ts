@@ -106,44 +106,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "todo-web-app",
-    title: "Todo Web App",
-    category: "Front-end",
-    datestart: "2022 December",
-    dateend: "2023 March",
-    description:
-      "A Webpack-powered todo app with multiple lists, optional checklists, theme switching, and a responsive side menu that collapses to a hamburger on small screens.",
-    tech: ["HTML", "CSS", "SASS", "JavaScript", "Webpack"],
-    thumbnail: "/img/front-page/todo-thumb.png",
-    github: "https://github.com/GeorgeCiesinski/todo-list",
-    demo: "https://georgeciesinski.github.io/todo-list/",
-    slides: [
-      {
-        src: "/img/todo-app/hamburger.gif",
-        caption:
-          "Side-menu seamlessly switches to hamburger menu on smaller screens",
-      },
-      {
-        src: "/img/todo-app/checklist.gif",
-        caption: "Optional checklist allows for more detailed task management",
-      },
-      {
-        src: "/img/todo-app/checklist-item.gif",
-        caption: "Adding and removing checklist items is fast and easy",
-      },
-      {
-        src: "/img/todo-app/delete-and-create.gif",
-        caption:
-          "You can delete or create multiple todo lists and switch between them",
-      },
-      {
-        src: "/img/todo-app/theme.gif",
-        caption:
-          "Changing the color theme is easy and font adjusts automatically to maintain contrast",
-      },
-    ],
-  },
-  {
     slug: "library-app",
     title: "Library App",
     category: "Front-end",
@@ -255,55 +217,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "social-media",
-    title: "Social Media Analysis",
-    category: "Data Analysis Script",
-    datestart: "2020 November",
-    dateend: "2021 August",
-    description:
-      "Scrapes Reddit posts, stores data in PostgreSQL, and plots sentiment analysis charts including timelines, pie charts, and upvote distributions.",
-    tech: [
-      "Python",
-      "PRAW",
-      "TextBlob",
-      "PostgreSQL",
-      "SQLAlchemy",
-      "matplotlib",
-    ],
-    thumbnail: "/img/front-page/sentiment-thumb.png",
-    github: "https://github.com/GeorgeCiesinski/social-media-analysis",
-    slides: [
-      {
-        src: "/img/social-media/reply-timeline.png",
-        caption:
-          "Line graph showing the timeline of comments and upvotes the post received.",
-      },
-      {
-        src: "/img/social-media/sentiment-pie.png",
-        caption: "Pie chart showing the sentiment distribution for the post.",
-      },
-      {
-        src: "/img/social-media/sentiment-timeline.png",
-        caption: "Scatter plot showing sentiment distribution over time.",
-      },
-      {
-        src: "/img/social-media/total-comments-and-replies.png",
-        caption:
-          "Bar graph showing how many comments fall into different sentiment levels and how many replies they have.",
-      },
-      {
-        src: "/img/social-media/total-comments-and-upvotes.png",
-        caption:
-          "Bar graph showing which sentiment levels the upvoted comments fell into.",
-      },
-      {
-        src: "/img/social-media/logs.png",
-        caption:
-          "Snapshot of the logs created from scraping and plotting a Reddit post.",
-      },
-    ],
-  },
-  {
     slug: "text-script",
     title: "Text-Script",
     category: "Desktop App",
@@ -324,47 +237,6 @@ export const projects: Project[] = [
         src: "/img/text-script/console-window.png",
         caption:
           "App stats and shortcuts can be viewed in the console which can be minimized and kept in the background.",
-      },
-    ],
-  },
-  {
-    slug: "image-filters",
-    title: "Image Filters",
-    category: "Desktop App",
-    datestart: "2019 November",
-    dateend: "2020 February",
-    description:
-      "A desktop image filter app using OpenCV and Tkinter, with sliders for adjustments, resizable preview, save, and logging.",
-    tech: ["Python", "OpenCV", "TKinter"],
-    thumbnail: "/img/front-page/image-filters-thumb.png",
-    github: "https://github.com/GeorgeCiesinski/image-filters",
-    slides: [
-      {
-        src: "/img/image-filters/opened-image.PNG",
-        caption:
-          "This is the GUI layout for the application once an image is opened.",
-      },
-      {
-        src: "/img/image-filters/open-image.gif",
-        caption: "The image can be opened using the File Menu.",
-      },
-      {
-        src: "/img/image-filters/modify-image.gif",
-        caption: "Various sliders can be used to modify the image.",
-      },
-      {
-        src: "/img/image-filters/resize-window.gif",
-        caption:
-          "The window can be resized by dragging the edges and the image will adjust accordingly.",
-      },
-      {
-        src: "/img/image-filters/save-image.gif",
-        caption: "The altered image can be saved using the File Menu.",
-      },
-      {
-        src: "/img/image-filters/logs-directory.PNG",
-        caption:
-          "This app stores logs in the log folder and can be accessed using the File Menu.",
       },
     ],
   },

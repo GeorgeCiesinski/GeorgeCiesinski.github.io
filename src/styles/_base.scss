@@ -50,18 +50,9 @@ textarea {
     color: var(--color-primary);
 
     &:hover {
-      background: var(--color-primary);
+      border-color: var(--color-secondary);
+      background: var(--color-secondary);
       color: var(--color-text-inverse);
-    }
-  }
-
-  &--ghost {
-    background: transparent;
-    color: var(--color-primary);
-
-    &:hover {
-      background: var(--color-primary);
-      color: var(--color-surface);
     }
   }
 }
