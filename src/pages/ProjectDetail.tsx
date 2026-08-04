@@ -2,6 +2,7 @@
  * Project detail page resolved from the `/projects/:slug` route.
  */
 
+import { useEffect } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { ProjectCarousel } from "../components/ProjectCarousel";
 import { getProjectBySlug } from "../data/projects";
@@ -10,6 +11,10 @@ import { getProjectBySlug } from "../data/projects";
 export function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>();
   const project = slug ? getProjectBySlug(slug) : undefined;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [slug]);
 
   if (!project) {
     return <Navigate to="/" replace />;
@@ -61,7 +66,7 @@ export function ProjectDetail() {
             ) : null}
             {project.demo ? (
               <a
-                className="btn btn--ghost"
+                className="btn btn--primary"
                 href={project.demo}
                 target="_blank"
                 rel="noreferrer"
