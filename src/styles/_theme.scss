@@ -2,8 +2,10 @@
 
 :root {
   // Brand accents
-  --color-primary: #1c658c;
-  --color-secondary: #3c94c7;
+  // --color-primary: #1c658c;
+  --color-primary: #3e8ab4;
+  // --color-secondary: #3c94c7;
+  --color-secondary: #4aa3d4;
 
   /* Theme Menu Toggle */
   --theme-icon: #ff9800;
@@ -23,6 +25,7 @@
   --color-text: #1a1a1a;
   --color-text-secondary: #5a6a75;
   --color-text-inverse: #ffffff;
+  --color-text-white: #ffffff;
 
   // Border
   --color-border: #c5d8e6;
@@ -31,7 +34,7 @@
 
 :root[data-theme="dark"] {
   // Brand accents — lifted for contrast on dark surfaces
-  --color-primary: #4aa3d4;
+  --color-primary: #35779b;
   --color-secondary: #6bb8de;
 
   /* Theme Menu Toggle */
@@ -52,6 +55,7 @@
   --color-text: #e8eef2;
   --color-text-secondary: #8fa3b0;
   --color-text-inverse: #1a1a1a;
+  --color-text-white: #ffffff;
 
   // Border
   --color-border: #2a4150;

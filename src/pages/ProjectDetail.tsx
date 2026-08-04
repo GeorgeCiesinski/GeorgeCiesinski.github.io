@@ -66,7 +66,7 @@ export function ProjectDetail() {
             ) : null}
             {project.demo ? (
               <a
-                className="btn btn--ghost"
+                className="btn btn--primary"
                 href={project.demo}
                 target="_blank"
                 rel="noreferrer"
