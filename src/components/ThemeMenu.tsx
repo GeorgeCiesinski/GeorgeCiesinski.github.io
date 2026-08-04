@@ -24,7 +24,10 @@ export function ThemeMenu() {
         aria-haspopup="menu"
         onClick={() => setOpen((v) => !v)}
       >
-        <span className="theme-menu-toggle__icon theme-menu-toggle__icon--sun" aria-hidden="true">
+        <span
+          className="theme-menu-toggle__icon theme-menu-toggle__icon--sun"
+          aria-hidden="true"
+        >
           <svg
             viewBox="0 0 24 24"
             width="28"
@@ -40,14 +43,32 @@ export function ThemeMenu() {
           </svg>
         </span>
 
-        <span className="theme-menu-toggle__icon theme-menu-toggle__icon--cloud" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" stroke="none">
+        <span
+          className="theme-menu-toggle__icon theme-menu-toggle__icon--cloud"
+          aria-hidden="true"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            width="30"
+            height="30"
+            fill="currentColor"
+            stroke="none"
+          >
             <path d="M7 18a4 4 0 0 1-.88-7.9 5 5 0 0 1 9.3-1.2 3.5 3.5 0 0 1 3.1 5.7A3.5 3.5 0 0 1 17 18H7z" />
           </svg>
         </span>
 
-        <span className="theme-menu-toggle__icon theme-menu-toggle__icon--stars" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="34" height="34" fill="currentColor" stroke="none">
+        <span
+          className="theme-menu-toggle__icon theme-menu-toggle__icon--stars"
+          aria-hidden="true"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            width="34"
+            height="34"
+            fill="currentColor"
+            stroke="none"
+          >
             <circle cx="4" cy="4" r="1.2" />
             <circle cx="22" cy="10" r="1" />
             <circle cx="17" cy="21" r="1.1" />
@@ -58,7 +79,10 @@ export function ThemeMenu() {
           </svg>
         </span>
 
-        <span className="theme-menu-toggle__icon theme-menu-toggle__icon--moon" aria-hidden="true">
+        <span
+          className="theme-menu-toggle__icon theme-menu-toggle__icon--moon"
+          aria-hidden="true"
+        >
           <svg
             viewBox="0 0 24 24"
             width="24"
